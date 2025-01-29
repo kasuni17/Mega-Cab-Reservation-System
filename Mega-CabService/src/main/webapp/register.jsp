@@ -8,7 +8,7 @@
 <%@include file="All_Components/AllCSS.jsp"%>
 
 <style>/* General Styles */
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('images/background/register.png');
@@ -17,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,36 +25,36 @@ body {
 
 /* Container */
 .container {
-    max-width: 700px; /* Increased width of the form */
+    max-width: 700px; 
     width: 100%;
-    background: rgba(255, 255, 255, 0.3); /* Slightly transparent white background */
+    background: rgba(255, 255, 255, 0.3); 
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     padding: 30px 40px;
     animation: fadeIn 1s ease-in-out;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content inside the container */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background */
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    align-items: center; 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Heading */
 h1 {
     font-size: 28px;
     font-weight: 600;
-    color: #4b79a1;
+    color: #020f31b3;
     margin-bottom: 20px;
-    text-align: center; /* Centered heading */
+    text-align: center; 
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Form Styles */
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    column-gap: 20px; /* Horizontal gap between columns */
-    row-gap: 15px; /* Vertical gap between rows */
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 45px; 
+    row-gap: 20px; 
     width: 100%;
 }
 
@@ -90,37 +90,41 @@ input:focus, textarea:focus {
 
 /* Full-Width Items */
 textarea {
-    grid-column: span 2; /* Full width across both columns */
+    grid-column: span 2; 
 }
 
 /* Button */
 button {
-    grid-column: span 2; /* Center button across both columns */
+    grid-column: span 2; 
     padding: 12px;
     font-size: 16px;
     color: #fff;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px; 
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s; 
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee; 
+    display: block;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #764ba2, #667eea);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); 
 }
-
+         
 /* Responsive Design */
 @media (max-width: 600px) {
     form {
-        grid-template-columns: 1fr; /* Single column for smaller screens */
+        grid-template-columns: 1fr; 
     }
     button {
-        grid-column: span 1; /* Adjust button span */
+        grid-column: span 1; 
     }
 }
 
@@ -168,8 +172,7 @@ button:hover {
 					id="password" name="password" placeholder="Enter your password"
 					required>
 			</div>
-			<!-- Address section placed below Password -->
-
+		
 			<label for="address">Address:</label>
 			<textarea id="address" name="address"
 				placeholder="Enter your address" required></textarea>

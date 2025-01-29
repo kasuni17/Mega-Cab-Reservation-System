@@ -84,8 +84,8 @@ header {
 /* General section styling */
 .section {
 	padding: 50px 10px;
-	background:#000;
-	color: #fff; 
+	background: #000;
+	color: #fff;
 	text-align: center;
 }
 
@@ -95,7 +95,7 @@ header {
 	font-size: 3rem;
 	font-weight: 700;
 	margin-bottom: 20px;
-	color: #ffdd40; 
+	color: #ffdd40;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 	text-transform: uppercase;
 }
@@ -115,12 +115,12 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 15px; 
+	margin-top: 15px;
 }
 
 .about-image {
-	width: 100%; 
-	max-width: 500px; 
+	width: 100%;
+	max-width: 500px;
 }
 
 .section p {
@@ -168,20 +168,28 @@ header {
 }
 
 /* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@
+keyframes fadeIn { 0% {
+	opacity: 0;
+	transform: translateY(20px);
 }
 
+100
+%
+{
+opacity
+:
+1;
+transform
+:
+translateY(
+0
+);
+}
+}
 footer {
-	background: #000; 
-	color: #fff; 
+	background: #000;
+	color: #fff;
 	padding: 50px 20px;
 	font-family: 'Arial', sans-serif;
 }
@@ -200,7 +208,7 @@ footer {
 	flex: 1;
 	max-width: 250px;
 	text-align: center;
-	margin-right: 55px; 
+	margin-right: 55px;
 }
 
 .footer-logo img {
@@ -225,7 +233,7 @@ footer {
 }
 
 .footer-contact h3, .footer-nav h3, .footer-social h3 {
-	color: #ffd700; 
+	color: #ffd700;
 	font-size: 18px;
 	margin-bottom: 10px;
 }
@@ -238,7 +246,7 @@ footer {
 
 .footer-contact p i, .footer-nav ul li i, .footer-social a i {
 	margin-right: 10px;
-	color: #ffd700; 
+	color: #ffd700;
 }
 
 .footer-nav ul {
@@ -253,7 +261,7 @@ footer {
 }
 
 .footer-nav ul li a:hover {
-	color: #0056b3; 
+	color: #0056b3;
 }
 
 .footer-social {
@@ -263,13 +271,13 @@ footer {
 .footer-social a {
 	font-size: 24px;
 	margin: 0 10px;
-	color: #ffd700; 
+	color: #ffd700;
 	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer-social a:hover {
 	transform: scale(1.2);
-	color: #0056b3; 
+	color: #0056b3;
 }
 
 .footer-bottom {
@@ -285,7 +293,7 @@ footer {
 
 .footer-bottom .brand-name {
 	font-weight: bold;
-	color: #ffd700; 
+	color: #ffd700;
 }
 
 .footer-bottom .designer {
@@ -301,7 +309,7 @@ footer {
 		text-align: center;
 	}
 	.footer-contact, .footer-nav, .footer-social {
-		margin: 100px 0; 
+		margin: 100px 0;
 	}
 }
 
@@ -330,7 +338,7 @@ footer {
 .why-choose-us .subheading {
 	font-size: 1.2rem;
 	font-weight: 300;
-	color: #f8d210; 
+	color: #f8d210;
 	margin-bottom: 30px;
 }
 
@@ -358,9 +366,9 @@ footer {
 }
 
 .benefit-item .icon {
-    font-size: 70px; /* Increased icon size */
-    color: #ffffff; /* Icon color to match the design */
-    margin-bottom: 15px;
+	font-size: 70px; /* Increased icon size */
+	color: #ffffff; /* Icon color to match the design */
+	margin-bottom: 15px;
 }
 
 .benefit-item .icon img {
@@ -369,91 +377,90 @@ footer {
 }
 
 .benefit-item h3 {
-    font-size: 1.5rem; /* Increased font size for headings */
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #ffffff
+	font-size: 1.5rem; /* Increased font size for headings */
+	font-weight: bold;
+	margin-bottom: 15px;
+	color: #ffffff
 }
 
 .benefit-item p {
-    font-size: 1rem;
-    color: #ccc;
-    line-height: 1.5;
-    margin-bottom: 0;
+	font-size: 1rem;
+	color: #ccc;
+	line-height: 1.5;
+	margin-bottom: 0;
 }
 
 .services-section {
-    padding: 50px 20px;
-    background: url('images/home/7.jpg') no-repeat center center/cover;
-    text-align: center;
+	padding: 50px 20px;
+	background: url('images/home/7.jpg') no-repeat center center/cover;
+	text-align: center;
 }
 
 .services-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fffff; 
-    margin: 0;
+	font-size: 3rem;
+	font-weight: bold;
+	color: #fffff;
+	margin: 0;
 }
 
 .services-subtitle {
-    font-size: 1.2rem;
-    color: #555; 
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+	font-size: 1.2rem;
+	color: #555;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
 }
 
 .services-description {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    color: #444; 
-    margin: 10px auto 30px;
-    max-width: 800px;
+	font-size: 1rem;
+	line-height: 1.2rem;
+	color: #444;
+	margin: 10px auto 30px;
+	max-width: 800px;
 }
 
 .services-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: nowrap; /* Ensures cards do not wrap to the next line */
-    overflow-x: auto; /* Allows horizontal scrolling if necessary */
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: nowrap; /* Ensures cards do not wrap to the next line */
+	overflow-x: auto; /* Allows horizontal scrolling if necessary */
 }
 
 .service-card {
-    background: #ffffff; 
-    color: #222; 
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px; /* Adjusted for the cards to fit in one row */
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+	background: #ffffff;
+	color: #222;
+	border-radius: 8px;
+	overflow: hidden;
+	width: 300px; /* Adjusted for the cards to fit in one row */
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
 }
 
 .service-icon i {
-    font-size: 3rem; /* Adjust icon size */
-    color: #f8d210; 
-    margin-bottom: 20px;
+	font-size: 3rem; /* Adjust icon size */
+	color: #f8d210;
+	margin-bottom: 20px;
 }
 
 .service-title {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 15px 0;
-    color: #222; 
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin: 15px 0;
+	color: #222;
 }
 
 .service-description {
-    font-size: 1rem;
-    padding: 0 15px;
-    margin-bottom: 20px;
-    color: #555; 
+	font-size: 1rem;
+	padding: 0 15px;
+	margin-bottom: 20px;
+	color: #555;
 }
 
-
 .cta-container {
-	display: flex;	
-	align-items: center; 
-	justify-content: center; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: #222;
 	border-radius: 02px;
 	padding: 30px 60px;
@@ -506,6 +513,7 @@ footer {
 <body>
 	<%@include file="All_Components/Navbar.jsp"%>
 
+	
 	<!-- Banner -->
 	<div class="banner"></div>
 
@@ -525,54 +533,58 @@ footer {
 	</div>
 
 	<section class="services-section">
-    <div class="container">
-        <h1 class="services-title">SERVICES</h1>
-        <p class="services-subtitle">RELIABLE CAB SERVICES IN COLOMBO</p>
-        <p class="services-description">Mega City Cab offers dependable
-            cab services in Colombo City, providing smooth transportation for
-            thousands of customers every month. From local trips to airport
-            transfers and special event rides, we prioritize comfort and
-            reliability.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-car"></i> <!-- Local Pick-Up Icon -->
-                </div>
-                <h3 class="service-title">LOCAL PICK-UP AND DROP-OFF</h3>
-                <p class="service-description">Quick and hassle-free rides for
-                    your daily errands, school runs, or business meetings. Our drivers
-                    ensure timely and safe pick-ups and drop-offs within Colombo.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-plane-departure"></i> <!-- Airport Transfers Icon -->
-                </div>
-                <h3 class="service-title">AIRPORT TRANSFERS</h3>
-                <p class="service-description">Travel comfortably to and from
-                    Bandaranaike International Airport. We ensure a stress-free
-                    experience with punctual and professional service.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-briefcase"></i> <!-- Corporate Services Icon -->
-                </div>
-                <h3 class="service-title">CORPORATE SERVICES</h3>
-                <p class="service-description">Efficient and reliable
-                    transportation solutions for corporate events, meetings, and
-                    conferences. Trust Mega City Cab for your business travel needs.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-gift"></i> <!-- Event Services Icon -->
-                </div>
-                <h3 class="service-title">SPECIAL EVENT TRANSPORT</h3>
-                <p class="service-description">Need a ride for weddings,
-                    parties, or other special occasions? We provide stylish and
-                    comfortable transport to make your day memorable.</p>
-            </div>
-        </div>
-    </div>
-</section>
+		<div class="container">
+			<h1 class="services-title">SERVICES</h1>
+			<p class="services-subtitle">RELIABLE CAB SERVICES IN COLOMBO</p>
+			<p class="services-description">Mega City Cab offers dependable
+				cab services in Colombo City, providing smooth transportation for
+				thousands of customers every month. From local trips to airport
+				transfers and special event rides, we prioritize comfort and
+				reliability.</p>
+			<div class="services-grid">
+				<div class="service-card">
+					<div class="service-icon">
+						<i class="fas fa-car"></i>
+						<!-- Local Pick-Up Icon -->
+					</div>
+					<h3 class="service-title">LOCAL PICK-UP AND DROP-OFF</h3>
+					<p class="service-description">Quick and hassle-free rides for
+						your daily errands, school runs, or business meetings. Our drivers
+						ensure timely and safe pick-ups and drop-offs within Colombo.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">
+						<i class="fas fa-plane-departure"></i>
+						<!-- Airport Transfers Icon -->
+					</div>
+					<h3 class="service-title">AIRPORT TRANSFERS</h3>
+					<p class="service-description">Travel comfortably to and from
+						Bandaranaike International Airport. We ensure a stress-free
+						experience with punctual and professional service.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">
+						<i class="fas fa-briefcase"></i>
+						<!-- Corporate Services Icon -->
+					</div>
+					<h3 class="service-title">CORPORATE SERVICES</h3>
+					<p class="service-description">Efficient and reliable
+						transportation solutions for corporate events, meetings, and
+						conferences. Trust Mega City Cab for your business travel needs.</p>
+				</div>
+				<div class="service-card">
+					<div class="service-icon">
+						<i class="fas fa-gift"></i>
+						<!-- Event Services Icon -->
+					</div>
+					<h3 class="service-title">SPECIAL EVENT TRANSPORT</h3>
+					<p class="service-description">Need a ride for weddings,
+						parties, or other special occasions? We provide stylish and
+						comfortable transport to make your day memorable.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Services Section -->
 	<div class="section" id="fleet">
@@ -592,55 +604,70 @@ footer {
 	</div>
 
 	<section class="why-choose-us">
-    <div class="container">
-        <h1 class="services-title">WHY CHOOSE MEGA CITY CAB</h1>
-        <p class="subheading">The Ultimate Cab Service Experience</p>
-        <div class="benefits">
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-shield-alt"></i> <!-- Safety Icon -->
-                </div>
-                <h3>Safety First</h3>
-                <p>Your safety is our top priority. With fully insured drivers and regularly maintained vehicles, we guarantee a safe journey every time.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-user-tie"></i> <!-- Driver Icon -->
-                </div>
-                <h3>Experienced & Professional Drivers</h3>
-                <p>Our drivers are carefully selected for their experience and professionalism. They are trained to provide you with a comfortable and secure ride.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-clock"></i> <!-- 24/7 Icon -->
-                </div>
-                <h3>24/7 Availability</h3>
-                <p>Whether it’s early morning or late at night, our service is available around the clock to meet your travel needs.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-map-marker-alt"></i> <!-- GPS Icon -->
-                </div>
-                <h3>Real-Time GPS Tracking</h3>
-                <p>Stay informed with real-time GPS tracking. You can track your cab's location and estimated arrival time through our app.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-dollar-sign"></i> <!-- Affordable Icon -->
-                </div>
-                <h3>Affordable & Transparent Rates</h3>
-                <p>Our pricing is competitive and transparent, with no hidden charges. You get high-quality service without breaking the bank.</p>
-            </div>
-            <div class="benefit-item">
-                <div class="icon">
-                    <i class="fas fa-laptop"></i> <!-- Online Booking Icon -->
-                </div>
-                <h3>Easy Online Booking</h3>
-                <p>Booking your cab has never been easier. Use our website or mobile app for a fast and easy booking experience, anytime, anywhere.</p>
-            </div>
-        </div>
-    </div>
-</section>
+		<div class="container">
+			<h1 class="services-title">WHY CHOOSE MEGA CITY CAB</h1>
+			<p class="subheading">The Ultimate Cab Service Experience</p>
+			<div class="benefits">
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-shield-alt"></i>
+						<!-- Safety Icon -->
+					</div>
+					<h3>Safety First</h3>
+					<p>Your safety is our top priority. With fully insured drivers
+						and regularly maintained vehicles, we guarantee a safe journey
+						every time.</p>
+				</div>
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-user-tie"></i>
+						<!-- Driver Icon -->
+					</div>
+					<h3>Experienced & Professional Drivers</h3>
+					<p>Our drivers are carefully selected for their experience and
+						professionalism. They are trained to provide you with a
+						comfortable and secure ride.</p>
+				</div>
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-clock"></i>
+						<!-- 24/7 Icon -->
+					</div>
+					<h3>24/7 Availability</h3>
+					<p>Whether it’s early morning or late at night, our service is
+						available around the clock to meet your travel needs.</p>
+				</div>
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-map-marker-alt"></i>
+						<!-- GPS Icon -->
+					</div>
+					<h3>Real-Time GPS Tracking</h3>
+					<p>Stay informed with real-time GPS tracking. You can track
+						your cab's location and estimated arrival time through our app.</p>
+				</div>
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-dollar-sign"></i>
+						<!-- Affordable Icon -->
+					</div>
+					<h3>Affordable & Transparent Rates</h3>
+					<p>Our pricing is competitive and transparent, with no hidden
+						charges. You get high-quality service without breaking the bank.</p>
+				</div>
+				<div class="benefit-item">
+					<div class="icon">
+						<i class="fas fa-laptop"></i>
+						<!-- Online Booking Icon -->
+					</div>
+					<h3>Easy Online Booking</h3>
+					<p>Booking your cab has never been easier. Use our website or
+						mobile app for a fast and easy booking experience, anytime,
+						anywhere.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 	<div class="cta-container">
@@ -653,7 +680,7 @@ footer {
 
 	<!-- Help Section -->
 	<%@include file="HelpSection.jsp"%>
-	
+
 	<!-- Footer -->
 	<footer>
 		<div class="footer-container">
@@ -681,22 +708,30 @@ footer {
 				<h3>Quick Links</h3>
 				<ul>
 					<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-					<li><a href="about.html"><i class="fa fa-user"></i> About Us</a></li>
+					<li><a href="about.html"><i class="fa fa-user"></i> About
+							Us</a></li>
 					<li><a href="services.html"><i class="fa fa-cogs"></i>Services</a></li>
-					<li><a href="contact.html"><i class="fa fa-envelope"></i>Contact Us</a></li>
+					<li><a href="contact.html"><i class="fa fa-envelope"></i>Contact
+							Us</a></li>
 				</ul>
 			</div>
 			<!-- Social Media Section -->
 			<div class="footer-social">
 				<h3>Follow Us</h3>
-				<a href="#" target="_blank"><i class="fa-brands fa-facebook fa-fade" style="color: #FFD43B;"></i></a>
-				<a	href="#" target="_blank"><i class="fa-brands fa-instagram fa-fade" style="color: #FFD43B;"></i></a> 
-				<a	href="#" target="_blank"><i class="fa-brands fa-linkedin fa-fade" style="color: #FFD43B;"></i></a>
+				<a href="#" target="_blank"><i
+					class="fa-brands fa-facebook fa-fade" style="color: #FFD43B;"></i></a>
+				<a href="#" target="_blank"><i
+					class="fa-brands fa-instagram fa-fade" style="color: #FFD43B;"></i></a>
+				<a href="#" target="_blank"><i
+					class="fa-brands fa-linkedin fa-fade" style="color: #FFD43B;"></i></a>
 			</div>
 		</div>
 
 		<div class="footer-bottom">
-			<p>&copy; 2025 <span class="brand-name">Mega City Cab</span>. Allrights reserved. | Designed by <span class="designer">Kasuni Peiris</span></p>
+			<p>
+				&copy; 2025 <span class="brand-name">Mega City Cab</span>. Allrights
+				reserved. | Designed by <span class="designer">Kasuni Peiris</span>
+			</p>
 		</div>
 	</footer>
 </body>
