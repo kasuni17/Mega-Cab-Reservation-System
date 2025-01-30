@@ -117,6 +117,26 @@ button:hover {
     text-decoration: none;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); 
 }
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.login-link a {
+    color: #020f31;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    background: linear-gradient(to right, #000000, #434343);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
          
 /* Responsive Design */
 @media (max-width: 600px) {
@@ -178,7 +198,11 @@ button:hover {
 				placeholder="Enter your address" required></textarea>
 
 			<button type="submit">Register</button>
+		
 		</form>
+		<div class="login-link">
+			Already have an account? <a href="login.jsp">Login here</a>
+		</div>
 	</div>
 
 </body>

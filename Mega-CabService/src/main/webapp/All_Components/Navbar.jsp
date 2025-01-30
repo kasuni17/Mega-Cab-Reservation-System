@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-   <style>
+
+ <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -58,6 +57,9 @@
         }
   </style>
   
+</head>
+<body>
+   
    <!-- First Navbar -->
     <header>
         <div class="navbar">
