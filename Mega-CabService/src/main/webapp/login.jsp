@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #333;
-	height: 100vh; 
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -25,7 +27,7 @@ body {
 
 /* Container */
 .container {
-	max-width: 700px; 
+	max-width: 700px;
 	width: 100%;
 	background: rgba(255, 255, 255, 0.3);
 	border-radius: 15px;
@@ -34,11 +36,10 @@ body {
 	animation: fadeIn 1s ease-in-out;
 	display: flex;
 	flex-direction: column;
-	align-items: center; 
-	backdrop-filter: blur(10px); 
-	-webkit-backdrop-filter: blur(10px); 
+	align-items: center;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	border: 2px solid rgba(0, 0, 0, 0.2);
-
 }
 
 /* Heading */
@@ -54,8 +55,8 @@ h1 {
 /* Form Styles */
 form {
 	display: grid;
-	grid-template-columns: 1fr; 
-	gap: 20px; 
+	grid-template-columns: 1fr;
+	gap: 20px;
 	width: 100%;
 }
 
@@ -91,14 +92,14 @@ input:focus {
 
 /* Adding Icons Inside Inputs */
 input[type="text"], input[type="password"] {
-	padding-left: 40px; 
+	padding-left: 40px;
 	background-size: 20px;
 	background-position: 10px center;
 	background-repeat: no-repeat;
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
-	padding-left: 40px; 
+	padding-left: 40px;
 }
 
 /* Button */
@@ -116,7 +117,7 @@ button {
 	background-size: 200% auto;
 	box-shadow: 0 0 20px #eee;
 	display: block;
-	width: 100%; 
+	width: 100%;
 }
 
 button:hover {
@@ -153,6 +154,13 @@ button:hover {
 	color: #000;
 }
 
+.error-message {
+	color: red;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
 /* Responsive Design */
 @media ( max-width : 600px) {
 	form {
@@ -179,21 +187,28 @@ to {
 <body>
 	<div class="container">
 		<h1>Login</h1>
-		<form method="POST" action="">
+
+		<c:if test="${not empty failedMsg}">
+			<h5 class="error-message">${ failedMsg}</h5>
+			<c:remove var="failedMsg" scope="session" />
+
+		</c:if>
+
+		<form method="POST" action="login">
 			<div>
-				<label for="username">Username:</label> <input type="text"
-					id="username" name="username" placeholder="Enter your username"
-					required>
+				<label for="email">E-mail:</label> <input type="text" id="email"
+					name="email" placeholder="Enter your e-mail" required="required">
 			</div>
 			<div>
 				<label for="password">Password:</label> <input type="password"
 					id="password" name="password" placeholder="Enter your password"
-					required>
+					required="required">
 			</div>
 			<button type="submit">Login</button>
 			<a href="#" class="forgot-password">Forgot Password?</a> <a
-				href="register.jsp" class="register-link">Don't have an account? Register here</a>
-			
+				href="register.jsp" class="register-link">Don't have an account?
+				Register here</a>
+
 		</form>
 	</div>
 </body>

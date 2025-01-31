@@ -1,5 +1,3 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="com.megacabservice.db.DBConn" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -410,9 +408,7 @@ translateY
 <body>
 	<%@include file="All_Components/Navbar.jsp"%>
 
-<% Connection conn=DBConn.getConn();
-out.println(conn);
-%>
+
 	<div class="banner"></div>
 
 	<!-- About Section -->
