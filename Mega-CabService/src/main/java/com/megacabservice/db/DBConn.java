@@ -34,11 +34,9 @@ public class DBConn {
         return instance;
     }
 
-    public Connection getConnection() {
-        if (connection == null) {
-            throw new IllegalStateException("Database connection is not available!");
-        }
-        return connection;
+    // Make this static so it can be called directly
+    public static Connection getConnection() {
+        return getInstance().connection;
     }
 
     public void closeConnection() {
@@ -53,3 +51,4 @@ public class DBConn {
         }
     }
 }
+
