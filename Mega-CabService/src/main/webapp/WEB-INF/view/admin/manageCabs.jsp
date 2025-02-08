@@ -21,10 +21,31 @@
             cursor: pointer;
             margin: 5px;
         }
+        .message {
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .success { background-color: green; }
+        .error { background-color: red; }
     </style>
 </head>
 <body>
     <h2>Manage Cabs</h2>
+
+    <!-- Display Success/Error Message -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get("message");
+        if (message) {
+            const div = document.createElement("div");
+            div.className = "message " + (message.includes("success") ? "success" : "error");
+            div.innerText = message;
+            document.body.insertBefore(div, document.body.firstChild);
+        }
+    </script>
 
     <table>
         <thead>

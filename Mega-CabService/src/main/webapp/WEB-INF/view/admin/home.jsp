@@ -184,7 +184,7 @@ footer p {
 		<h2>Welcome, Admin</h2>
 		<div class="dashboard">
 			<div class="card">
-				<a href="manageCabs.jsp"> <i class="fas fa-car"></i>
+				<a href="manageCabs"> <i class="fas fa-car"></i>
     <h3>Manage Cabs</h3>
 </a>
 

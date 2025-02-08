@@ -18,7 +18,7 @@ public class EditCabServlet extends HttpServlet {
         CabDAO dao = new CabDAO();
         Cab cab = dao.getCabById(id);
         request.setAttribute("cab", cab);
-        request.getRequestDispatcher("/WEB-INF/view/editCab.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/admin/editCab.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

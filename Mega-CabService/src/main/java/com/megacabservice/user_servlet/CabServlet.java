@@ -18,6 +18,6 @@ public class CabServlet extends HttpServlet {
         CabDAO dao = new CabDAO();
         List<Cab> cabs = dao.getAllCabs();
         request.setAttribute("cabs", cabs);
-        request.getRequestDispatcher("/WEB-INF/view/manageCabs.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/admin/manageCabs.jsp").forward(request, response);
     }
 }
