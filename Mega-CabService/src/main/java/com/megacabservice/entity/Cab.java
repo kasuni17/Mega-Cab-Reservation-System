@@ -1,7 +1,5 @@
 package com.megacabservice.entity;
 
-
-
 public class Cab {
     private int id;
     private String name;
@@ -22,60 +20,25 @@ public class Cab {
         this.fareRange = fareRange;
     }
 
-    // Getters and Setters for each property
-    public int getId() {
-        return id;
-    }
+    // Getters and Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
+    public String getImage() { return image; }
+    public void setImage(String image) { this.image = image; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public String getImage() {
-        return image;
-    }
+    public String getCapacity() { return capacity; }
+    public void setCapacity(String capacity) { this.capacity = capacity; }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+    public String getUseCase() { return useCase; }
+    public void setUseCase(String useCase) { this.useCase = useCase; }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(String capacity) {
-        this.capacity = capacity;
-    }
-
-    public String getUseCase() {
-        return useCase;
-    }
-
-    public void setUseCase(String useCase) {
-        this.useCase = useCase;
-    }
-
-    public String getFareRange() {
-        return fareRange;
-    }
-
-    public void setFareRange(String fareRange) {
-        this.fareRange = fareRange;
-    }
+    public String getFareRange() { return fareRange; }
+    public void setFareRange(String fareRange) { this.fareRange = fareRange; }
 }

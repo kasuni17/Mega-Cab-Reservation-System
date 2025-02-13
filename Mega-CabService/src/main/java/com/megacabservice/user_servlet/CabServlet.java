@@ -17,6 +17,7 @@ public class CabServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CabDAO dao = new CabDAO();
         List<Cab> cabs = dao.getAllCabs();
+        System.out.println("Cabs in servlet: " + cabs.size()); // Debugging
         request.setAttribute("cabs", cabs);
         request.getRequestDispatcher("/WEB-INF/view/admin/manageCabs.jsp").forward(request, response);
     }

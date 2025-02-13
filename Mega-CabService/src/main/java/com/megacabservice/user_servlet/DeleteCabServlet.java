@@ -11,7 +11,7 @@ import com.megacabservice.dao.CabDAO;
 
 @WebServlet("/deleteCab")
 public class DeleteCabServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         CabDAO dao = new CabDAO();
         dao.deleteCab(id);

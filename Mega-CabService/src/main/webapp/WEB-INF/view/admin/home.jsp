@@ -191,7 +191,7 @@ footer p {
 			</div>
 
 			<div class="card">
-				<a href="ManageDrivers.jsp"> <i class="fas fa-users"></i>
+				<a href="viewDrivers"> <i class="fas fa-users"></i>
 					<h3>Manage Drivers</h3>
 				</a>
 			</div>
