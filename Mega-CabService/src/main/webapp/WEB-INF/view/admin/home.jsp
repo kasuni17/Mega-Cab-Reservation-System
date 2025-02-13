@@ -185,13 +185,13 @@ footer p {
 		<div class="dashboard">
 			<div class="card">
 				<a href="manageCabs"> <i class="fas fa-car"></i>
-    <h3>Manage Cabs</h3>
-</a>
+					<h3>Manage Cabs</h3>
+				</a>
 
 			</div>
 
 			<div class="card">
-				<a href="viewDrivers"> <i class="fas fa-users"></i>
+				<a href="view_drivers"> <i class="fas fa-users"></i>
 					<h3>Manage Drivers</h3>
 				</a>
 			</div>
