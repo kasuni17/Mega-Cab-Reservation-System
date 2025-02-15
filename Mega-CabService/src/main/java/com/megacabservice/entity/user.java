@@ -1,6 +1,6 @@
 package com.megacabservice.entity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class user {
 
@@ -11,13 +11,23 @@ public class user {
     private String nic;
     private String password;
     private String address;
-    private Date createdAt;  // Stores the creation date
+    private Timestamp createdAt;
 
+    // Default constructor
     public user() {
-        super();
-        // Optionally, you can set default values here, e.g., createdAt = new Date();
     }
 
+    // Parameterized constructor for updating user details
+    public user(int user_id, String name, String email, String phoneNumber, String nic, String address) {
+        this.user_id = user_id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.nic = nic;
+        this.address = address;
+    }
+
+    // Getters and Setters
     public int getUser_id() {
         return user_id;
     }
@@ -74,11 +84,11 @@ public class user {
         this.address = address;
     }
 
-    public Date getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 

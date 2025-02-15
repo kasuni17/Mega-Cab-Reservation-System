@@ -197,7 +197,7 @@ footer p {
 			</div>
 
 			<div class="card">
-				<a href="ManageUsers.jsp"> <i class="fas fa-user-cog"></i>
+				<a href="viewUsers"> <i class="fas fa-user-cog"></i>
 					<h3>Manage Users</h3>
 				</a>
 			</div>
