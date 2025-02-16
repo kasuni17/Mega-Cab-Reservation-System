@@ -1,9 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page isELIgnored="false" %> <!-- Enable EL -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Cab</title>
+    <meta charset="UTF-8">
+    <title>Add Cab</title>
     <style>
         /* General Styles */
         body {
@@ -20,37 +21,49 @@
         /* Sidebar Styles */
         .sidebar {
             width: 250px;
-            height: 100vh;
             background-color: #1a1a1a;
-            padding: 20px;
+            padding: 1rem;
             box-shadow: 2px 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .sidebar h2 {
             color: #FFD700;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
 
-        .sidebar a {
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 1rem 0;
+        }
+
+        .sidebar ul li a {
             color: #FFD700;
             text-decoration: none;
+            font-size: 1rem;
             display: block;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 0.5rem;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
-        .sidebar a:hover {
+        .sidebar ul li a:hover {
             background-color: #333;
         }
 
         /* Main Content Styles */
         .main-content {
             flex: 1;
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             overflow-y: auto;
+            padding: 2rem;
         }
 
         .container {
@@ -59,14 +72,15 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             width: 400px;
-            margin: 0 auto;
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         h1 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
             color: #FFD700;
+            animation: slideIn 1s ease-in-out;
         }
 
         /* Form Styles */
@@ -125,6 +139,25 @@
         .error-message {
             color: #FF0000;
             font-weight: bold;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
         }
     </style>
 </head>
@@ -132,57 +165,55 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Admin Panel</h2>
-        <a href="viewCabs">View Cabs</a>
-        <a href="${pageContext.request.contextPath}/AddCabServlet">Add New Cab</a>
+        <ul>
+            <li> <a href="viewCabs">View Cabs</a></li>
+            <li><a href="${pageContext.request.contextPath}/AddCabServlet">Add New Cab</a></li>
+           
+        </ul>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
         <div class="container">
-            <h1>Edit Cab</h1>
+            <h1>Add New Cab</h1>
             
             <!-- Display error message if any -->
-            <c:if test="${not empty errorMessage}">
-                <p class="error-message">${errorMessage}</p>
-            </c:if>
+            <% if (request.getAttribute("errorMessage") != null) { %>
+                <p class="error-message"><%= request.getAttribute("errorMessage") %></p>
+            <% } %>
 
-            <form action="EditCabServlet" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="${cab.id}">
-
+            <form action="AddCabServlet" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" value="${cab.name}" required>
+                    <input type="text" id="name" name="name" placeholder="Enter cab name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="image">Cab Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*">
-                    <c:if test="${not empty cab.image}">
-                        <p>Current Image: <img src="${cab.image}" alt="Cab Image" width="100"></p>
-                    </c:if>
+                    <input type="file" id="image" name="image" accept="image/*" required>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" required>${cab.description}</textarea>
+                    <textarea id="description" name="description" placeholder="Enter cab description" rows="3" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="capacity">Capacity:</label>
-                    <input type="text" id="capacity" name="capacity" value="${cab.capacity}" required>
+                    <input type="text" id="capacity" name="capacity" placeholder="Enter passenger capacity" required>
                 </div>
 
                 <div class="form-group">
                     <label for="use_case">Use Case:</label>
-                    <input type="text" id="use_case" name="use_case" value="${cab.useCase}" required>
+                    <input type="text" id="use_case" name="use_case" placeholder="Enter use case (e.g., city ride)" required>
                 </div>
 
                 <div class="form-group">
                     <label for="fare_range">Fare Range:</label>
-                    <input type="text" id="fare_range" name="fare_range" value="${cab.fareRange}" required>
+                    <input type="text" id="fare_range" name="fare_range" placeholder="Enter fare range (e.g., $10-$50)" required>
                 </div>
 
-                <input type="submit" value="Update">
+                <input type="submit" value="Add Cab">
             </form>
         </div>
     </div>
