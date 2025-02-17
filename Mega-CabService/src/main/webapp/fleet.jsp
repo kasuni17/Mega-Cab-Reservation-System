@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page import="com.megacabservice.dao.CabDAOImpl, com.megacabservice.entity.Cab, com.megacabservice.db.DBConn" %>
+<%@ page import="java.util.List" %>
+
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
- <style>
-        body {
+    <title>Our Fleet</title>
+    <style>
+     body {
             font-family: Arial, sans-serif;
             background-color: #121212;
             margin: 0;
@@ -31,7 +32,13 @@
             padding: 100px 600px;
             border-radius: 10px;
         }
-        .filter-buttons button {
+
+
+    .filter-buttons {
+        margin: 30px 0;
+    }
+
+    .filter-buttons button {
             padding: 10px 20px;
             margin: 5px;
             border: none;
@@ -45,7 +52,9 @@
             background-color: yellow;
             color: black;
         }
-        .fleet-container {
+
+
+      .fleet-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -71,7 +80,19 @@
             border-radius: 10px;
             object-fit: cover;
         }
-        .book-now {
+
+    .vehicle-card h3 {
+        margin: 15px 0 10px 0;
+        color: #00c6ff;
+        font-size: 1.5em;
+    }
+
+    .vehicle-card p {
+        margin: 5px 0;
+        text-align: left;
+    }
+
+    .book-now {
             margin-top: 10px;
             padding: 10px 15px;
             background-color: yellow;
@@ -87,69 +108,71 @@
             background-color: darkblue;
             color: white;
         }
+
+    #category-heading {
+        font-size: 2.2em;
+        margin: 20px 0;
+        color: #00c6ff;
+    }
+
+    @media (max-width: 768px) {
+        .fleet-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner h1 {
+            padding: 60px 100px;
+            font-size: 40px;
+        }
+    }
     </style>
 </head>
 <body>
-	 <%@include file="All_Components/Navbar.jsp" %>
-	 
-	 <div class="banner">
+  <%@include file="All_Components/Navbar.jsp" %>
+    <div class="banner">
         <h1>Our Fleet</h1>
     </div>
+
     <div class="filter-buttons">
         <button onclick="filterFleet('all')">All</button>
-        <button onclick="filterFleet('sedan')">Sedan</button>
-        <button onclick="filterFleet('suv')">SUV</button>
-        <button onclick="filterFleet('van')">Van</button>
+        <button onclick="filterFleet('Luxury')">Luxury</button>
+        <button onclick="filterFleet('Economy')">Economy</button>
+        <button onclick="filterFleet('Family')">Family</button>
     </div>
-    <h2 id="category-heading">All Vehicles</h2>
-    <div class="fleet-container" id="fleet"></div>
-	 
-	 <!-- footer -->
-	<%@include file="All_Components/footer.jsp"%>
-	
-	  <script>
-        const vehicles = [
-            { name: "Toyota Corolla", type: "sedan", image: "corolla.jpg", description: "A comfortable and fuel-efficient sedan.", capacity: "4 passengers", useCase: "City Rides", fareRange: "$30 - $50" },
-            { name: "Honda CR-V", type: "suv", image: "crv.jpg", description: "A spacious and reliable SUV.", capacity: "5 passengers", useCase: "Family Trips", fareRange: "$50 - $80" },
-            { name: "Mercedes V-Class", type: "van", image: "vclass.jpg", description: "A luxury van for group travel.", capacity: "7 passengers", useCase: "Airport Transfers", fareRange: "$70 - $100" },
-            { name: "Nissan X-Trail", type: "suv", image: "xtrail.jpg", description: "A powerful and stylish SUV.", capacity: "5 passengers", useCase: "Adventure Trips", fareRange: "$60 - $90" },
-            { name: "Hyundai Elantra", type: "sedan", image: "elantra.jpg", description: "A sleek and modern sedan.", capacity: "4 passengers", useCase: "Business Travel", fareRange: "$40 - $60" }
-        ];
 
-        function displayFleet(filterType) {
-            const fleetContainer = document.getElementById("fleet");
-            fleetContainer.innerHTML = ""; // Clear previous entries
+    <div class="fleet-container" id="fleetContainer">
+        <%
+            CabDAOImpl cabDAO = new CabDAOImpl(DBConn.getConnection());
+            List<Cab> cabs = cabDAO.getAllCabs();
+            for (Cab cab : cabs) {
+        %>
+            <div class="vehicle-card" data-category="<%= cab.getUseCase() %>">
+                <img src="<%= request.getContextPath() + "/" + cab.getImage() %>" alt="<%= cab.getName() %>">
+                <h3><%= cab.getName() %></h3>
+                <p><strong>Description:</strong> <%= cab.getDescription() %></p>
+                <p><strong>Capacity:</strong> <%= cab.getCapacity() %></p>
+                <p><strong>Use Case:</strong> <%= cab.getUseCase() %></p>
+                <p><strong>Fare Range:</strong> <%= cab.getFareRange() %></p>
+                <a href="bookig.jsp" class="book-now">Book Now</a>
+            </div>
+        <%
+            }
+        %>
+    </div>
 
-            vehicles.forEach(vehicle => {
-                if (filterType === "all" || vehicle.type === filterType) {
-                    fleetContainer.innerHTML += `
-                        <div class="vehicle-card">
-                            <img src="${vehicle.image}" alt="${vehicle.name}">
-                            <h3>${vehicle.name}</h3>
-                            <p><strong>Description:</strong> ${vehicle.description}</p>
-                            <p><strong>Capacity:</strong> ${vehicle.capacity}</p>
-                            <p><strong>Use Case:</strong> ${vehicle.useCase}</p>
-                            <p><strong>Fare Range:</strong> ${vehicle.fareRange}</p>
-                            <a href="booking.html" class="book-now">Book Now</a>
-                        </div>
-                    `;
+    <script>
+        function filterFleet(category) {
+            const cards = document.querySelectorAll('.vehicle-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
                 }
             });
         }
-
-        function filterFleet(type) {
-            const categoryHeading = document.getElementById("category-heading");
-            if (type === "all") {
-                categoryHeading.textContent = "All Vehicles";
-            } else {
-                categoryHeading.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Vehicles`;
-            }
-            displayFleet(type);
-        }
-
-        // Load all vehicles initially
-        displayFleet("all");
     </script>
-	
 </body>
 </html>

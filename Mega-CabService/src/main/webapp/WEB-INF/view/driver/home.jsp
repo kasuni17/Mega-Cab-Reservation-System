@@ -88,7 +88,7 @@
             <a href="driver/trips.jsp">Trips</a>
         </div>
         <div>
-            <a href="logout">Logout</a>
+            <a href="login.jsp">Logout</a>
         </div>
     </div>
 
@@ -102,7 +102,7 @@
     <div class="dashboard-container">
         <h2>Driver Dashboard</h2>
         <div class="dashboard-options">
-            <a href="driver/profile.jsp">View Profile</a>
+            <a href="profile.jsp">View Profile</a>
             <a href="driver/trips.jsp">View Trips</a>
             <a href="driver/updateProfile.jsp">Update Profile</a>
             <a href="driver/changePassword.jsp">Change Password</a>
