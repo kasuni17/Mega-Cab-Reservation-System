@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<style>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -184,8 +183,8 @@
     </style>
 </head>
 <body>
-	 <%@include file="All_Components/Navbar.jsp" %>
-	   <div class="banner">
+    <%@include file="All_Components/Navbar.jsp" %>
+    <div class="banner">
         <div class="header">
             <h1 class="neon-text">Colombo Mega Cabs</h1>
             <p>24/7 Premium Taxi Service in Sri Lanka</p>
@@ -196,45 +195,42 @@
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="info-card">
-                    <h3><i class="fas fa-map-marker-alt"></i>Headquarters</h3>
+                    <h3><i class="fas fa-map-marker-alt" aria-label="Location"></i>Headquarters</h3>
                     <p>No. 123 Galle Road,<br>Colombo 03, Sri Lanka</p>
                 </div>
                 
                 <div class="info-card">
-                    <h3><i class="fas fa-clock"></i>Operating Hours</h3>
+                    <h3><i class="fas fa-clock" aria-label="Operating Hours"></i>Operating Hours</h3>
                     <p>24/7 Service<br>365 Days Availability</p>
                 </div>
 
                 <div class="info-card">
-                    <h3><i class="fas fa-phone"></i>Contact</h3>
+                    <h3><i class="fas fa-phone" aria-label="Contact"></i>Contact</h3>
                     <p>Hotline: +94 112 345 678<br>Mobile: +94 765 432 109</p>
                 </div>
 
                 <div class="info-card">
-                    <h3><i class="fas fa-envelope"></i>Support</h3>
+                    <h3><i class="fas fa-envelope" aria-label="Support"></i>Support</h3>
                     <p>bookings@colombomegacabs.lk<br>support@colombomegacabs.lk</p>
                 </div>
             </div>
 
-            <form class="contact-form">
+            <form class="contact-form" action="contact" method="POST" onsubmit="return validateForm()">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" placeholder="Contact Number" required>
+                    <input type="tel" name="phone" placeholder="Contact Number" required pattern="[0-9]{10}">
                 </div>
                 <div class="form-group">
-                    <input type="datetime-local" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Special Requirements" rows="4"></textarea>
+                    <textarea name="message" placeholder="Special Requirements" rows="4" required></textarea>
                 </div>
                 <button type="submit">
                     <i class="fas fa-taxi"></i>
-                    Book Now
+                    Send
                 </button>
             </form>
         </div>
@@ -250,9 +246,42 @@
             </iframe>
         </div>
     </div>
-	 
-	 
-	 <!-- footer -->
-	<%@include file="All_Components/footer.jsp"%>
+     
+    <!-- footer -->
+    <%@include file="All_Components/footer.jsp"%>
+    
+    <script>
+        function validateForm() {
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const phone = document.querySelector('input[name="phone"]').value.trim();
+            const message = document.querySelector('textarea[name="message"]').value.trim();
+
+            if (!name || !email || !phone || !message) {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            return true;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        if (status === 'success') {
+            alert('Message sent successfully!');
+        } else if (status === 'failed') {
+            alert('Failed to send message. Please try again.');
+        }
+    </script>
 </body>
 </html>

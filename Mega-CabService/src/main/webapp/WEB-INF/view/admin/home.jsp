@@ -195,8 +195,8 @@ footer p {
 					<h3>Manage Drivers</h3>
 				</a>
 			</div>
-			
-			
+
+
 
 			<div class="card">
 				<a href="viewUsers"> <i class="fas fa-user-cog"></i>
@@ -217,10 +217,12 @@ footer p {
 			</div>
 
 			<div class="card">
-				<a href="Settings.jsp"> <i class="fas fa-cog"></i>
-					<h3>Settings</h3>
+				<a href="${pageContext.request.contextPath}/messages"> <i
+					class="fas fa-money-bill-wave"></i>
+					<h3>MSG</h3>
 				</a>
 			</div>
+
 
 			<div class="card">
 				<a href="Reports.jsp"> <i class="fas fa-file-alt"></i>
