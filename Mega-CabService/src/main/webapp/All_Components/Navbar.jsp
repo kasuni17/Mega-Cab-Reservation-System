@@ -77,10 +77,12 @@ header {
 
 			<c:if test="${not empty userobj}">
 				<div class="buttons">
-					<a href="viewbooking.jsp"><i class="fa fa-taxi fa-2x"
-						aria-hidden="true"></i></a> <a href="profile.jsp">
-						<button>${userobj.name}</button>
-					</a> <a href="login.jsp"><button>LogOut</button></a>
+					<a href="editProfile.jsp"><i class="fa fa-taxi fa-2x"
+						aria-hidden="true"></i></a> 
+						 <a href="">
+                            <button>${userobj.name}</button>
+                        </a>
+				 <a href="login.jsp"><button>LogOut</button></a>
 				</div>
 			</c:if>
 

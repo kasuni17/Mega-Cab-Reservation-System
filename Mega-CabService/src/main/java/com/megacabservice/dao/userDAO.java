@@ -10,4 +10,6 @@ public interface userDAO {
     public boolean deleteUser(int userId);
     public boolean updateUser(user user);
     public user getUserById(int userId);
+    
+    
 }
