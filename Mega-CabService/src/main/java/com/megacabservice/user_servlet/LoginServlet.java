@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("userobj", user);
 
                 // Redirect to the user home page
-                resp.sendRedirect("home.jsp");
+                resp.sendRedirect("index.jsp");
                 return; // Exit the method after redirecting
             }
 
