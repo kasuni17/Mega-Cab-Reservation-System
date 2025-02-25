@@ -101,17 +101,18 @@ public class BookingServlet extends HttpServlet {
 			booking.setCab_id(Integer.parseInt(request.getParameter("cab_id")));
 			booking.setStatus("assigned");
 
-			// Add booking to the database
-			if (bookingDAO.addBooking(booking)) {
-				response.sendRedirect("confirmation.jsp?booking_id=" + booking.getBooking_id());
-			} else {
-				response.sendRedirect("error1.jsp?message=Failed to add booking");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			// Pass the exception message to error.jsp
-			String errorMessage = e.getMessage() != null ? e.getMessage() : "An unexpected error occurred.";
-			response.sendRedirect("error1.jsp?message=" + errorMessage);
-		}
+			 // Add booking to the database
+	        int bookingId = bookingDAO.addBooking(booking); // Modify addBooking to return the generated booking ID
+	        if (bookingId > 0) {
+	            response.sendRedirect("confirmation.jsp?booking_id=" + bookingId);
+	        } else {
+	            response.sendRedirect("error1.jsp?message=Failed to add booking");
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        // Pass the exception message to error.jsp
+	        String errorMessage = e.getMessage() != null ? e.getMessage() : "An unexpected error occurred.";
+	        response.sendRedirect("error1.jsp?message=" + errorMessage);
+	    }
 	}
 }
