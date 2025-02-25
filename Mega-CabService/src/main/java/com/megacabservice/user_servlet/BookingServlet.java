@@ -41,7 +41,7 @@ public class BookingServlet extends HttpServlet {
 		System.out.println("card_cvc: " + request.getParameter("card_cvc"));
 		System.out.println("driver_id: " + request.getParameter("driver_id"));
 		System.out.println("cab_id: " + request.getParameter("cab_id"));
-
+		System.out.println("user_id: " + request.getParameter("user_id"));
 		try {
 			// Validate required fields
 			if (request.getParameter("user_name") == null || request.getParameter("user_name").isEmpty()) {
@@ -77,6 +77,9 @@ public class BookingServlet extends HttpServlet {
 			if (request.getParameter("cab_id") == null || request.getParameter("cab_id").isEmpty()) {
 				throw new IllegalArgumentException("Cab ID is required.");
 			}
+			if (request.getParameter("user_id") == null || request.getParameter("user_id").isEmpty()) {
+				throw new IllegalArgumentException("User ID is required.");
+			}
 
 			// Create Booking object
 			Booking booking = new Booking();
@@ -99,20 +102,22 @@ public class BookingServlet extends HttpServlet {
 			booking.setCard_cvc(request.getParameter("card_cvc"));
 			booking.setDriver_id(Integer.parseInt(request.getParameter("driver_id")));
 			booking.setCab_id(Integer.parseInt(request.getParameter("cab_id")));
+			booking.setUser_id(Integer.parseInt(request.getParameter("user_id"))); // Set user_id
+
 			booking.setStatus("assigned");
 
-			 // Add booking to the database
-	        int bookingId = bookingDAO.addBooking(booking); // Modify addBooking to return the generated booking ID
-	        if (bookingId > 0) {
-	            response.sendRedirect("confirmation.jsp?booking_id=" + bookingId);
-	        } else {
-	            response.sendRedirect("error1.jsp?message=Failed to add booking");
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        // Pass the exception message to error.jsp
-	        String errorMessage = e.getMessage() != null ? e.getMessage() : "An unexpected error occurred.";
-	        response.sendRedirect("error1.jsp?message=" + errorMessage);
-	    }
+			// Add booking to the database
+			int bookingId = bookingDAO.addBooking(booking); // Modify addBooking to return the generated booking ID
+			if (bookingId > 0) {
+				response.sendRedirect("confirmation.jsp?booking_id=" + bookingId);
+			} else {
+				response.sendRedirect("error1.jsp?message=Failed to add booking");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// Pass the exception message to error.jsp
+			String errorMessage = e.getMessage() != null ? e.getMessage() : "An unexpected error occurred.";
+			response.sendRedirect("error1.jsp?message=" + errorMessage);
+		}
 	}
 }

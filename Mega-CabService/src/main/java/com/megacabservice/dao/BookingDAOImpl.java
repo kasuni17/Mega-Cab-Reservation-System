@@ -15,8 +15,9 @@ public class BookingDAOImpl implements BookingDAO {
 
     @Override
     public int addBooking(Booking booking) {
-        String sql = "INSERT INTO booking (user_name, user_email, user_phone, user_address, pickup_location, drop_location, ride_date, ride_time, passenger_count, luggage_count, special_request, payment_type, card_number, card_expiry, card_cvc, driver_id, cab_id, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+    	 String sql = "INSERT INTO bookings (user_name, user_email, user_phone, user_address, pickup_location, drop_location, ride_date, ride_time, passenger_count, luggage_count, special_request, payment_type, card_number, card_expiry, card_cvc, driver_id, cab_id, status, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+           try (PreparedStatement stmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, booking.getUser_name());
             stmt.setString(2, booking.getUser_email());
             stmt.setString(3, booking.getUser_phone());
@@ -35,7 +36,7 @@ public class BookingDAOImpl implements BookingDAO {
             stmt.setInt(16, booking.getDriver_id());
             stmt.setInt(17, booking.getCab_id());
             stmt.setString(18, booking.getStatus());
-
+            stmt.setInt(19, booking.getUser_id());
             int rows = stmt.executeUpdate();
             if (rows > 0) {
                 try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {

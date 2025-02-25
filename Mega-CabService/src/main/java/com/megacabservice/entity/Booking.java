@@ -23,6 +23,7 @@ public class Booking {
 	private int driver_id;
 	private int cab_id;
 	private String status;
+	private int user_id;
 
 	// Getters and Setters
 	public int getBooking_id() {
@@ -175,5 +176,13 @@ public class Booking {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 }
