@@ -101,7 +101,7 @@ header {
 	<nav class="nav-links">
 		<a href="index.jsp">Home</a> <a href="about.jsp">About Us</a> <a
 			href="fleet.jsp">Our Fleet</a> <a href="contactus.jsp">Contact Us</a>
-		<a href="booking.jsp" class="book-now">BOOK NOW</a>
+		<a href="ride_info.jsp" class="book-now">BOOK NOW</a>
 	</nav>
 </body>
 </html>
