@@ -205,7 +205,8 @@ footer p {
 			</div>
 
 			<div class="card">
-				<a href="ManageBookings.jsp"> <i class="fas fa-calendar-alt"></i>
+				<a href="admin/viewBookings">
+ <i class="fas fa-calendar-alt"></i>
 					<h3>Manage Bookings</h3>
 				</a>
 			</div>

@@ -77,9 +77,8 @@ header {
 
 			<c:if test="${not empty userobj}">
 				<div class="buttons">
-					<a href="editProfile.jsp"><i class="fa fa-taxi fa-2x"
-						aria-hidden="true"></i></a> 
-						 <a href="">
+					<a href="userBookings.jsp"><i class="fa-solid fa-calendar fa-xl" style="color: #FFD43B;"></i></a> 
+						 <a href="editProfile.jsp">
                             <button>${userobj.name}</button>
                         </a>
 				 <a href="login.jsp"><button>LogOut</button></a>
