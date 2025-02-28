@@ -9,4 +9,5 @@ public interface BookingDAO {
     boolean updateBooking(Booking booking);
     boolean deleteBooking(int bookingId);
     Booking getBookingById(int bookingId);
+    List<Booking> getBookingsByUserId(int userId);
 }

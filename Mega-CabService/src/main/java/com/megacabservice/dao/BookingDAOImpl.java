@@ -187,4 +187,32 @@ public class BookingDAOImpl implements BookingDAO {
 
 		return booking;
 	}
+	
+	 @Override
+	    public List<Booking> getBookingsByUserId(int userId) {
+	        List<Booking> userBookings = new ArrayList<>();
+	        String sql = "SELECT * FROM bookings WHERE user_id = ?";
+
+	        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+	            stmt.setInt(1, userId);
+	            try (ResultSet rs = stmt.executeQuery()) {
+	                while (rs.next()) {
+	                    Booking booking = new Booking();
+	                    booking.setBooking_id(rs.getInt("booking_id"));
+	                    booking.setUser_name(rs.getString("user_name"));
+	                    booking.setPickup_location(rs.getString("pickup_location"));
+	                    booking.setDrop_location(rs.getString("drop_location"));
+	                    booking.setRide_date(rs.getDate("ride_date"));
+	                    booking.setRide_time(rs.getTime("ride_time"));
+	                    booking.setStatus(rs.getString("status"));
+	                    userBookings.add(booking);
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+
+	        System.out.println("Number of bookings found: " + userBookings.size());
+	        return userBookings;
+	    }
 }

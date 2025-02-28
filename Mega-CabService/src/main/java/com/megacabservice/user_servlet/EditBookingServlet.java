@@ -49,6 +49,7 @@ public class EditBookingServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            // Retrieve form data
             int bookingId = Integer.parseInt(request.getParameter("booking_id"));
             String user_name = request.getParameter("user_name");
             String user_email = request.getParameter("user_email");
@@ -58,7 +59,7 @@ public class EditBookingServlet extends HttpServlet {
             String drop_location = request.getParameter("drop_location");
             String rideDateStr = request.getParameter("ride_date");
             String rideTimeStr = request.getParameter("ride_time");
-            String status = request.getParameter("status");
+            String status = request.getParameter("status").trim().toLowerCase(); // Normalize the status value
 
             // Validate required fields
             if (user_name == null || user_name.isEmpty() || user_email == null || user_email.isEmpty() ||
@@ -67,6 +68,12 @@ public class EditBookingServlet extends HttpServlet {
                 rideDateStr == null || rideDateStr.isEmpty() || rideTimeStr == null || rideTimeStr.isEmpty() ||
                 status == null || status.isEmpty()) {
                 response.getWriter().println("All fields are required.");
+                return;
+            }
+
+            // Validate the status value
+            if (!isValidStatus(status)) {
+                response.getWriter().println("Invalid status value. Allowed values are: 'assigned', 'completed', 'canceled'.");
                 return;
             }
 
@@ -104,9 +111,17 @@ public class EditBookingServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             e.printStackTrace();
             response.getWriter().println("Invalid input data.");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            response.getWriter().println("Invalid date or time format.");
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Error occurred while updating the booking.");
         }
+    }
+
+    // Helper method to validate the status value
+    private boolean isValidStatus(String status) {
+        return status.equals("assigned") || status.equals("completed") || status.equals("canceled");
     }
 }

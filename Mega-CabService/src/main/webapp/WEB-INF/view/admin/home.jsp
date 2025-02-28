@@ -205,16 +205,19 @@ footer p {
 			</div>
 
 			<div class="card">
-				<a href="admin/viewBookings">
- <i class="fas fa-calendar-alt"></i>
+				<a href="admin/viewBookings"> <i class="fas fa-calendar-alt"></i>
 					<h3>Manage Bookings</h3>
 				</a>
 			</div>
 
 			<div class="card">
-				<a href="Payments.jsp"> <i class="fas fa-money-bill-wave"></i>
-					<h3>Payments</h3>
-				</a>
+<a href="${pageContext.request.contextPath}/admin/adminBookings">
+    <i class="fas fa-money-bill-wave"></i>
+    <h3>Payments</h3>
+</a>
+
+
+
 			</div>
 
 			<div class="card">
