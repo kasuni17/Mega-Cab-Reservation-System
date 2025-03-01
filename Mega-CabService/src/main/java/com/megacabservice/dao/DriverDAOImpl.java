@@ -131,6 +131,29 @@ public class DriverDAOImpl implements DriverDAO {
         return success;
     }
     
-    
-    
+    @Override
+    public Driver getDriverById(int driverId) {
+        Driver driver = null;
+        try {
+            String sql = "SELECT * FROM driver WHERE driver_id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, driverId);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                driver = new Driver();
+                driver.setDriverId(rs.getInt("driver_id"));
+                driver.setName(rs.getString("name"));
+                driver.setEmail(rs.getString("email"));
+                driver.setPassword(rs.getString("password")); // Retrieve the password
+                driver.setLicenseNumber(rs.getString("license_number"));
+                driver.setPhoneNumber(rs.getString("phone_number"));
+                driver.setAddress(rs.getString("address"));
+                driver.setStatus(rs.getString("status"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return driver;
+    }
 }
