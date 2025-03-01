@@ -10,4 +10,5 @@ public interface BookingDAO {
     boolean deleteBooking(int bookingId);
     Booking getBookingById(int bookingId);
     List<Booking> getBookingsByUserId(int userId);
+    List<Booking> getBookingsByDriverId(int driverId);
 }
