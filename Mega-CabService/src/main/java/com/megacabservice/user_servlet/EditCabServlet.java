@@ -16,9 +16,9 @@ import java.io.File;
 import java.io.IOException;
 
 @WebServlet("/EditCabServlet")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-                 maxFileSize = 1024 * 1024 * 10,      // 10MB
-                 maxRequestSize = 1024 * 1024 * 50)  // 50MB
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, 
+                 maxFileSize = 1024 * 1024 * 10,      
+                 maxRequestSize = 1024 * 1024 * 50)  
 public class EditCabServlet extends HttpServlet {
     private CabDAO cabDAO = new CabDAOImpl(DBConn.getConnection());
 
@@ -39,15 +39,15 @@ public class EditCabServlet extends HttpServlet {
         String useCase = request.getParameter("use_case");
         String fareRange = request.getParameter("fare_range");
 
-        // Handle file upload
-        Part filePart = request.getPart("image"); // Retrieve the uploaded file
+        
+        Part filePart = request.getPart("image"); 
         String fileName = getFileName(filePart);
 
-        // Save the file to the server
+        
         String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
-            uploadDir.mkdir(); // Create the upload directory if it doesn't exist
+            uploadDir.mkdir(); 
         }
 
         String imagePath = null;
@@ -55,29 +55,29 @@ public class EditCabServlet extends HttpServlet {
             String filePath = uploadPath + File.separator + fileName;
             filePart.write(filePath);
 
-            // Save the relative path to the database
+            
             imagePath = "uploads" + File.separator + fileName;
         } else {
-            // If no new image is uploaded, retain the existing image path
+            
             Cab existingCab = cabDAO.getCabById(id);
             imagePath = existingCab.getImage();
         }
 
-        // Create a Cab object
+        
         Cab cab = new Cab(id, name, imagePath, description, capacity, useCase, fareRange);
 
-        // Update the cab in the database
+        
         boolean f = cabDAO.updateCab(cab);
 
         if (f) {
-            response.sendRedirect("viewCabs"); // Redirect to the viewCabs page after successful update
+            response.sendRedirect("viewCabs"); 
         } else {
             request.setAttribute("errorMessage", "Failed to update cab. Please try again.");
-            request.getRequestDispatcher("/WEB-INF/view/admin/editCab.jsp").forward(request, response); // Forward back to the form with an error message
+            request.getRequestDispatcher("/WEB-INF/view/admin/editCab.jsp").forward(request, response); 
         }
     }
 
-    // Helper method to extract the file name from the Part
+    
     private String getFileName(Part part) {
         String contentDisposition = part.getHeader("content-disposition");
         for (String token : contentDisposition.split(";")) {

@@ -9,7 +9,7 @@
     <%@include file="All_Components/AllCSS.jsp"%>
 
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Arial', sans-serif;
             background-image: url('images/background/login.png');
@@ -24,7 +24,7 @@
             align-items: center;
         }
 
-        /* Container */
+      
         .container {
             max-width: 700px;
             width: 100%;
@@ -41,7 +41,7 @@
             border: 2px solid rgba(0, 0, 0, 0.2);
         }
 
-        /* Heading */
+    
         h1 {
             font-size: 28px;
             font-weight: 600;
@@ -51,7 +51,6 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        /* Form Styles */
         form {
             display: grid;
             grid-template-columns: 1fr;
@@ -70,7 +69,6 @@
             color: #333;
         }
 
-        /* Input Fields with Icons */
         input {
             width: 100%;
             padding: 12px 15px;
@@ -89,7 +87,7 @@
             background: #fff;
         }
 
-        /* Button */
+       
         button {
             padding: 12px;
             font-size: 16px;
@@ -113,7 +111,6 @@
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
         }
 
-        /* Forgot Password Link */
         .forgot-password {
             font-size: 14px;
             color: #3a2f10;
@@ -127,7 +124,6 @@
             color: #000;
         }
 
-        /* Register Section */
         .register-link {
             font-size: 14px;
             color: #3a2f10;
@@ -148,7 +144,6 @@
             margin-bottom: 15px;
         }
 
-        /* Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;

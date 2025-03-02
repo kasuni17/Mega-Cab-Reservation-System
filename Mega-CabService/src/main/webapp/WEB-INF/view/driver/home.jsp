@@ -99,7 +99,7 @@ body {
 }
 
 .dashboard-options a i {
-	font-size: 20px; /* Icon size */
+	font-size: 20px; 
 }
 </style>
 </head>
@@ -127,18 +127,13 @@ body {
 		<h2>Driver Dashboard</h2>
 		<div class="dashboard-options">
 			<a href="${pageContext.request.contextPath}/driverProfile"> <i
-				class="fas fa-user"></i> <!-- Icon for View Profile --> View Profile
+				class="fas fa-user"></i> View Profile
 			</a> 
 			<a
 				href="${pageContext.request.contextPath}/DriverBookingsServlet?driver_id=${driverobj.driverId}">
-				<i class="fas fa-road"></i> <!-- Icon for View Trips --> View Trips
+				<i class="fas fa-road"></i>  View Trips
 			</a> 
-			<a href="driver/updateProfile.jsp"> <i class="fas fa-edit"></i>
-				<!-- Icon for Update Profile --> Update Profile
-			</a> 
-			<a href="driver/changePassword.jsp"> <i class="fas fa-key"></i>
-				<!-- Icon for Change Password --> Change Password
-			</a>
+			
 		</div>
 	</div>
 

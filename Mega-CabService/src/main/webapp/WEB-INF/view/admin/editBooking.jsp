@@ -11,45 +11,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #000000; /* Black background */
-            color: #FFD700; /* Yellow text */
+            background-color: #000000; 
+            color: #FFD700; 
             font-family: 'Arial', sans-serif;
         }
         .container {
-            background-color: #1A1A1A; /* Dark gray container */
+            background-color: #1A1A1A; 
             padding: 2rem;
             border-radius: 10px;
             margin-top: 2rem;
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2); /* Yellow shadow */
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2); 
         }
         h2 {
-            color: #FFD700; /* Yellow heading */
+            color: #FFD700; 
             text-align: center;
             margin-bottom: 1.5rem;
         }
         .form-control {
-            background-color: #333333; /* Dark gray input background */
-            color: #FFD700; /* Yellow text */
-            border: 1px solid #FFD700; /* Yellow border */
+            background-color: #333333; 
+            color: #FFD700; 
+            border: 1px solid #FFD700; 
         }
         .form-control:focus {
-            background-color: #444444; /* Slightly lighter gray on focus */
+            background-color: #444444; 
             color: #FFD700;
             border-color: #FFD700;
-            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6); /* Yellow glow on focus */
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6); 
         }
         .btn-primary {
-            background-color: #FFD700; /* Yellow button */
+            background-color: #FFD700; 
             border-color: #FFD700;
-            color: #000000; /* Black text */
+            color: #000000; 
             font-weight: bold;
         }
         .btn-primary:hover {
-            background-color: #FFC700; /* Slightly darker yellow on hover */
+            background-color: #FFC700; 
             border-color: #FFC700;
         }
         label {
-            color: #FFD700; /* Yellow labels */
+            color: #FFD700; 
         }
         select.form-control {
             background-color: #333333;

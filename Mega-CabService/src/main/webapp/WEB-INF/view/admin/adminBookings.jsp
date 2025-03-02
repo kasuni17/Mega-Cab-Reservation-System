@@ -7,51 +7,51 @@
 <head>
     <title>Admin Bookings</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000000; /* Black background */
-            color: #FFD700; /* Yellow text */
+            background-color: #000000; 
+            color: #FFD700; 
             margin: 0;
             padding: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #FFD700; /* Yellow heading */
+            color: #FFD700; 
             font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        /* Table Styles */
+       
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: #1A1A1A; /* Dark gray background for table */
-            color: #FFD700; /* Yellow text */
+            background-color: #1A1A1A; 
+            color: #FFD700; 
         }
 
         th, td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #FFD700; /* Yellow border */
+            border-bottom: 1px solid #FFD700;
         }
 
         th {
-            background-color: #333333; /* Darker gray for header */
+            background-color: #333333; 
             font-weight: bold;
             text-transform: uppercase;
         }
 
         tr:hover {
-            background-color: #444444; /* Lighter gray on hover */
+            background-color: #444444; 
         }
 
-        /* Button Styles */
+        
         input[type="submit"] {
-            background-color: #FFD700; /* Yellow background */
-            color: #000000; /* Black text */
+            background-color: #FFD700; 
+            color: #000000; 
             border: none;
             padding: 8px 16px;
             font-size: 14px;
@@ -61,15 +61,15 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #FFA500; /* Darker yellow on hover */
+            background-color: #FFA500; 
         }
 
-        /* Form Styles */
+        
         form {
             margin: 0;
         }
 
-        /* Responsive Design */
+       
         @media (max-width: 768px) {
             table {
                 display: block;

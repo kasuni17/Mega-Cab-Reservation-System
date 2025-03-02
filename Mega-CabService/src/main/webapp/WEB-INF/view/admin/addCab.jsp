@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Add Cab</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000;
@@ -18,7 +18,7 @@
             overflow: hidden;
         }
 
-        /* Sidebar Styles */
+       
         .sidebar {
             width: 250px;
             background-color: #1a1a1a;
@@ -56,7 +56,7 @@
             background-color: #333;
         }
 
-        /* Main Content Styles */
+       
         .main-content {
             flex: 1;
             display: flex;
@@ -83,7 +83,7 @@
             animation: slideIn 1s ease-in-out;
         }
 
-        /* Form Styles */
+       
         form {
             display: flex;
             flex-direction: column;
@@ -135,14 +135,14 @@
             background-color: #FFA500;
         }
 
-        /* Error Message */
+        
         .error-message {
             color: #FF0000;
             font-weight: bold;
             animation: shake 0.5s ease-in-out;
         }
 
-        /* Animations */
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }

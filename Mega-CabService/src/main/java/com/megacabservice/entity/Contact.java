@@ -85,6 +85,6 @@ public class Contact {
 		this.status = status;
 	}
 
-	// Constructors, Getters and Setters
+	
 
 }

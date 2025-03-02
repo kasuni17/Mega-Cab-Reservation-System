@@ -9,43 +9,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <style>
-        /* General Reset */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styling */
+        
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000; /* Black background */
-            color: #FFD700; /* Yellow text */
+            background-color: #000; 
+            color: #FFD700; 
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        /* Form Container */
+        
         .form-container {
-            background-color: #1a1a1a; /* Dark gray background */
+            background-color: #1a1a1a; 
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); /* Yellow shadow */
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); 
             width: 100%;
             max-width: 400px;
         }
 
-        /* Heading */
+        
         h1 {
             text-align: center;
             margin-bottom: 1.5rem;
             font-size: 2rem;
-            color: #FFD700; /* Yellow */
+            color: #FFD700; 
         }
 
-        /* Form Input Fields */
+        
         .form-group {
             margin-bottom: 1rem;
         }
@@ -54,30 +54,30 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
-            color: #FFD700; /* Yellow */
+            color: #FFD700; 
         }
 
         .form-group input {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #FFD700; /* Yellow border */
+            border: 2px solid #FFD700; 
             border-radius: 5px;
-            background-color: #333; /* Dark gray input background */
-            color: #FFF; /* White text */
+            background-color: #333; 
+            color: #FFF;
             font-size: 1rem;
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: #FFA500; /* Orange border on focus */
+            border-color: #FFA500; 
         }
 
-        /* Submit Button */
+        
         button[type="submit"] {
             width: 100%;
             padding: 0.75rem;
-            background-color: #FFD700; /* Yellow background */
-            color: #000; /* Black text */
+            background-color: #FFD700; 
+            color: #000; 
             border: none;
             border-radius: 5px;
             font-size: 1rem;
@@ -87,10 +87,10 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #FFA500; /* Orange on hover */
+            background-color: #FFA500; 
         }
 
-        /* Hidden Field */
+        
         input[type="hidden"] {
             display: none;
         }
@@ -100,7 +100,7 @@
     <div class="form-container">
         <h1>Edit Profile</h1>
         <form method="POST" action="updateProfile">
-            <!-- Hidden field for user_id -->
+           
             <input type="hidden" name="user_id" value="${userobj.user_id}">
 
             <div class="form-group">

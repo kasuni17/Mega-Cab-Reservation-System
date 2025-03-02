@@ -261,8 +261,8 @@ translateY
 }
 
 .benefit-item .icon {
-	font-size: 70px; /* Increased icon size */
-	color: #ffffff; /* Icon color to match the design */
+	font-size: 70px; 
+	color: #ffffff; 
 	margin-bottom: 15px;
 }
 
@@ -272,7 +272,7 @@ translateY
 }
 
 .benefit-item h3 {
-	font-size: 1.5rem; /* Increased font size for headings */
+	font-size: 1.5rem; 
 	font-weight: bold;
 	margin-bottom: 15px;
 	color: #ffffff
@@ -317,8 +317,8 @@ translateY
 	display: flex;
 	justify-content: center;
 	gap: 20px;
-	flex-wrap: nowrap; /* Ensures cards do not wrap to the next line */
-	overflow-x: auto; /* Allows horizontal scrolling if necessary */
+	flex-wrap: nowrap; 
+	overflow-x: auto; 
 }
 
 .service-card {
@@ -326,14 +326,14 @@ translateY
 	color: #222;
 	border-radius: 8px;
 	overflow: hidden;
-	width: 300px; /* Adjusted for the cards to fit in one row */
+	width: 300px; 
 	text-align: center;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	padding: 20px;
 }
 
 .service-icon i {
-	font-size: 3rem; /* Adjust icon size */
+	font-size: 3rem; 
 	color: #f8d210;
 	margin-bottom: 20px;
 }
@@ -439,7 +439,7 @@ translateY
 				<div class="service-card">
 					<div class="service-icon">
 						<i class="fas fa-car"></i>
-						<!-- Local Pick-Up Icon -->
+					
 					</div>
 					<h3 class="service-title">LOCAL PICK-UP AND DROP-OFF</h3>
 					<p class="service-description">Quick and hassle-free rides for
@@ -449,7 +449,7 @@ translateY
 				<div class="service-card">
 					<div class="service-icon">
 						<i class="fas fa-plane-departure"></i>
-						<!-- Airport Transfers Icon -->
+						
 					</div>
 					<h3 class="service-title">AIRPORT TRANSFERS</h3>
 					<p class="service-description">Travel comfortably to and from
@@ -459,7 +459,7 @@ translateY
 				<div class="service-card">
 					<div class="service-icon">
 						<i class="fas fa-briefcase"></i>
-						<!-- Corporate Services Icon -->
+						
 					</div>
 					<h3 class="service-title">CORPORATE SERVICES</h3>
 					<p class="service-description">Efficient and reliable
@@ -469,7 +469,7 @@ translateY
 				<div class="service-card">
 					<div class="service-icon">
 						<i class="fas fa-gift"></i>
-						<!-- Event Services Icon -->
+						
 					</div>
 					<h3 class="service-title">SPECIAL EVENT TRANSPORT</h3>
 					<p class="service-description">Need a ride for weddings,
@@ -505,7 +505,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-shield-alt"></i>
-						<!-- Safety Icon -->
+						
 					</div>
 					<h3>Safety First</h3>
 					<p>Your safety is our top priority. With fully insured drivers
@@ -515,7 +515,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-user-tie"></i>
-						<!-- Driver Icon -->
+						
 					</div>
 					<h3>Experienced & Professional Drivers</h3>
 					<p>Our drivers are carefully selected for their experience and
@@ -525,7 +525,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-clock"></i>
-						<!-- 24/7 Icon -->
+					
 					</div>
 					<h3>24/7 Availability</h3>
 					<p>Whether it’s early morning or late at night, our service is
@@ -534,7 +534,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-map-marker-alt"></i>
-						<!-- GPS Icon -->
+					
 					</div>
 					<h3>Real-Time GPS Tracking</h3>
 					<p>Stay informed with real-time GPS tracking. You can track
@@ -543,7 +543,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-dollar-sign"></i>
-						<!-- Affordable Icon -->
+					
 					</div>
 					<h3>Affordable & Transparent Rates</h3>
 					<p>Our pricing is competitive and transparent, with no hidden
@@ -552,7 +552,7 @@ translateY
 				<div class="benefit-item">
 					<div class="icon">
 						<i class="fas fa-laptop"></i>
-						<!-- Online Booking Icon -->
+						
 					</div>
 					<h3>Easy Online Booking</h3>
 					<p>Booking your cab has never been easier. Use our website or

@@ -13,11 +13,11 @@ public class user {
     private String address;
     private Timestamp createdAt;
 
-    // Default constructor
+    
     public user() {
     }
 
-    // Parameterized constructor for updating user details
+    
     public user(int user_id, String name, String email, String phoneNumber, String nic, String address) {
         this.user_id = user_id;
         this.name = name;
@@ -27,7 +27,7 @@ public class user {
         this.address = address;
     }
 
-    // Getters and Setters
+    
     public int getUser_id() {
         return user_id;
     }

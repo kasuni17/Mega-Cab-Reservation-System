@@ -13,12 +13,12 @@
 body {
 	margin: 0;
 	font-family: 'Arial', sans-serif;
-	background-color: #1a1a1a; /* Dark background */
-	color: #ffffff; /* White text */
+	background-color: #1a1a1a; 
+	color: #ffffff; 
 }
 
 nav {
-	background-color: #262626; /* Dark nav background */
+	background-color: #262626; 
 	padding: 15px 20px;
 	display: flex;
 	justify-content: space-between;
@@ -39,18 +39,18 @@ nav ul li {
 }
 
 nav ul li a {
-	color: #ffdd57; /* Yellow text */
+	color: #ffdd57; 
 	text-decoration: none;
 	font-size: 18px;
 	transition: color 0.3s;
 }
 
 nav ul li a:hover {
-	color: #ffffff; /* White text on hover */
+	color: #ffffff; 
 }
 
 .nav-right {
-	margin-left: auto; /* Push logout button to the right */
+	margin-left: auto; 
 }
 
 main {
@@ -61,7 +61,7 @@ main {
 main h2 {
 	font-size: 32px;
 	margin-bottom: 30px;
-	color: #ffdd57; /* Yellow text */
+	color: #ffdd57; 
 }
 
 .dashboard {
@@ -69,44 +69,44 @@ main h2 {
 	justify-content: center;
 	gap: 25px;
 	flex-wrap: wrap;
-	max-width: 1200px; /* Limit width for better alignment */
-	margin: 0 auto; /* Center the dashboard */
+	max-width: 1200px; 
+	margin: 0 auto; 
 }
 
 .card {
-	background: #262626; /* Dark card background */
+	background: #262626; 
 	border-radius: 12px;
 	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 	padding: 25px;
 	text-align: center;
-	width: calc(33.33% - 50px); /* 3 cards per row with gap */
+	width: calc(33.33% - 50px); 
 	transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 12px 20px rgba(255, 221, 87, 0.2); /* Yellow shadow */
+	box-shadow: 0 12px 20px rgba(255, 221, 87, 0.2);
 }
 
 .card i {
 	font-size: 50px;
 	margin-bottom: 15px;
-	color: #ffdd57; /* Yellow icons */
+	color: #ffdd57; 
 }
 
 .card a {
-	text-decoration: none; /* Remove underline */
-	color: inherit; /* Inherit the color from the parent */
+	text-decoration: none; 
+	color: inherit; 
 }
 
 .card a:hover {
-	color: inherit; /* Ensure the color doesn't change on hover */
+	color: inherit; 
 }
 
 .card h3 {
 	margin: 0;
 	font-size: 20px;
-	color: #ffffff; /* White text */
+	color: #ffffff; 
 }
 
 @
@@ -165,8 +165,8 @@ to {
 }
 
 footer {
-	background-color: #262626; /* Dark footer background */
-	color: #ffffff; /* White text */
+	background-color: #262626; 
+	color: #ffffff; 
 	text-align: center;
 	padding: 15px 0;
 	margin-top: 30px;

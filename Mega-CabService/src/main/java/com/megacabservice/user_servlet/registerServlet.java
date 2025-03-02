@@ -26,7 +26,7 @@ public class registerServlet extends HttpServlet {
             String password = req.getParameter("password");
             String address = req.getParameter("address");
 
-            // Validate input fields
+            
             if (name == null || email == null || phone_number == null || nic == null || password == null || address == null || 
                 name.isEmpty() || email.isEmpty() || phone_number.isEmpty() || nic.isEmpty() || password.isEmpty() || address.isEmpty()) {
                 req.setAttribute("error", "All fields are required.");
@@ -34,7 +34,7 @@ public class registerServlet extends HttpServlet {
                 return;
             }
 
-            // Create a new user object
+            
             user us = new user();
             us.setName(name);
             us.setEmail(email);
@@ -45,25 +45,25 @@ public class registerServlet extends HttpServlet {
             
             
 
-            // Create DAO instance and register user
+            
             userDAOImpl dao = new userDAOImpl(DBConn.getInstance().getConnection());
             boolean f = dao.userRegister(us);
 
             if (f) {
-                // Registration success
+                
                 HttpSession session = req.getSession();
                 session.setAttribute("message", "Registration successful. Please login.");
-                resp.sendRedirect("login.jsp"); // Redirect to login page
+                resp.sendRedirect("login.jsp"); 
             } else {
-                // Registration failure (email already exists)
+                
                 req.setAttribute("error", "Email is already registered.");
-                req.getRequestDispatcher("register.jsp").forward(req, resp); // Forward to registration page
+                req.getRequestDispatcher("register.jsp").forward(req, resp); 
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("error", "Something went wrong. Please try again later.");
-            req.getRequestDispatcher("register.jsp").forward(req, resp); // Forward to registration page on error
+            req.getRequestDispatcher("register.jsp").forward(req, resp); 
         }
     }
 }

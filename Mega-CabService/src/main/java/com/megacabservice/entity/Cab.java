@@ -9,11 +9,11 @@ public class Cab {
     private String useCase;
     private String fareRange;
 
-    // Default constructor
+    
     public Cab() {
     }
 
-    // Parameterized constructor
+    
     public Cab(int id, String name, String image, String description, String capacity, String useCase, String fareRange) {
         this.id = id;
         this.name = name;
@@ -24,7 +24,7 @@ public class Cab {
         this.fareRange = fareRange;
     }
 
-    // Getters and Setters
+    
     public int getId() {
         return id;
     }

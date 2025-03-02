@@ -53,15 +53,15 @@
 </head>
 <body>
     <%
-        // Retrieve the user object from the session
+       
         user user = (user) session.getAttribute("user");
         if (user == null) {
-            // Redirect to login page if the user is not logged in
+           
             response.sendRedirect("profile.jsp");
             return;
         }
 
-        // Format the created_at timestamp
+     
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String createdAt = dateFormat.format(user.getCreatedAt());
     %>
@@ -75,7 +75,7 @@
         <p><strong>Address:</strong> <%= user.getAddress() %></p>
         <p><strong>Joined:</strong> <%= createdAt %></p>
 
-        <!-- Link to edit profile -->
+        
         <a href="editProfile.jsp" class="btn">Edit Profile</a>
     </div>
 </body>

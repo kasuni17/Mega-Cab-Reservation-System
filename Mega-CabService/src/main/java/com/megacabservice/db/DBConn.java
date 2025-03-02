@@ -34,7 +34,7 @@ public class DBConn {
         return instance;
     }
 
-    // Make this static so it can be called directly
+    
     public static Connection getConnection() {
         return getInstance().connection;
     }

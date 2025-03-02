@@ -23,7 +23,7 @@ public class BookingServlet extends HttpServlet {
 		Connection conn = DBConn.getConnection();
 		BookingDAO bookingDAO = new BookingDAOImpl(conn);
 
-		// Debug: Print all parameters
+		
 		System.out.println("user_name: " + request.getParameter("user_name"));
 		System.out.println("user_email: " + request.getParameter("user_email"));
 		System.out.println("user_phone: " + request.getParameter("user_phone"));
@@ -43,7 +43,7 @@ public class BookingServlet extends HttpServlet {
 		System.out.println("cab_id: " + request.getParameter("cab_id"));
 		System.out.println("user_id: " + request.getParameter("user_id"));
 		try {
-			// Validate required fields
+			
 			if (request.getParameter("user_name") == null || request.getParameter("user_name").isEmpty()) {
 				throw new IllegalArgumentException("User name is required.");
 			}
@@ -81,7 +81,7 @@ public class BookingServlet extends HttpServlet {
 				throw new IllegalArgumentException("User ID is required.");
 			}
 
-			// Create Booking object
+			
 			Booking booking = new Booking();
 			booking.setUser_name(request.getParameter("user_name"));
 			booking.setUser_email(request.getParameter("user_email"));
@@ -89,9 +89,9 @@ public class BookingServlet extends HttpServlet {
 			booking.setUser_address(request.getParameter("user_address"));
 			booking.setPickup_location(request.getParameter("pickup_location"));
 			booking.setDrop_location(request.getParameter("drop_location"));
-			booking.setRide_date(Date.valueOf(request.getParameter("ride_date"))); // Ensure date format: yyyy-MM-dd
-			booking.setRide_time(Time.valueOf(request.getParameter("ride_time") + ":00")); // Ensure time format:
-																							// HH:mm:ss
+			booking.setRide_date(Date.valueOf(request.getParameter("ride_date"))); 
+			booking.setRide_time(Time.valueOf(request.getParameter("ride_time") + ":00")); 
+																							
 			booking.setPassenger_count(Integer.parseInt(request.getParameter("passenger_count")));
 			booking.setLuggage_count(Integer.parseInt(request.getParameter("luggage_count")));
 			booking.setSpecial_request(request.getParameter("special_request"));
@@ -102,12 +102,12 @@ public class BookingServlet extends HttpServlet {
 			booking.setCard_cvc(request.getParameter("card_cvc"));
 			booking.setDriver_id(Integer.parseInt(request.getParameter("driver_id")));
 			booking.setCab_id(Integer.parseInt(request.getParameter("cab_id")));
-			booking.setUser_id(Integer.parseInt(request.getParameter("user_id"))); // Set user_id
+			booking.setUser_id(Integer.parseInt(request.getParameter("user_id"))); 
 
 			booking.setStatus("assigned");
 
-			// Add booking to the database
-			int bookingId = bookingDAO.addBooking(booking); // Modify addBooking to return the generated booking ID
+			
+			int bookingId = bookingDAO.addBooking(booking); 
 			if (bookingId > 0) {
 				response.sendRedirect("confirmation.jsp?booking_id=" + bookingId);
 			} else {
@@ -115,7 +115,7 @@ public class BookingServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			// Pass the exception message to error.jsp
+			
 			String errorMessage = e.getMessage() != null ? e.getMessage() : "An unexpected error occurred.";
 			response.sendRedirect("error1.jsp?message=" + errorMessage);
 		}

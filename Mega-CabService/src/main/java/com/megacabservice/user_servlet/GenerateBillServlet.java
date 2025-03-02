@@ -25,15 +25,15 @@ public class GenerateBillServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Retrieve the booking ID from the request
+        
         int bookingId = Integer.parseInt(req.getParameter("bookingId"));
         Booking booking = bookingDAO.getBookingById(bookingId);
 
         if (booking != null) {
-            // Calculate the total bill
+            
             double totalBill = BillCalculator.calculateTotalBill(booking.getPassenger_count(), booking.getLuggage_count());
 
-            // Prepare the email content
+            
             String emailSubject = "Your Ride Bill";
             String emailBody = "Dear " + booking.getUser_name() + ",\n\n"
                     + "Here is your ride bill summary:\n"
@@ -46,10 +46,10 @@ public class GenerateBillServlet extends HttpServlet {
                     + "Total Bill: $" + totalBill + "\n\n"
                     + "Thank you for choosing our service!\n";
 
-            // Send the email
+           
             EmailSender.sendEmail(booking.getUser_email(), emailSubject, emailBody);
 
-            // Respond to the client
+           
             resp.getWriter().write("Bill generated and email sent successfully!");
         } else {
             resp.getWriter().write("Booking not found!");

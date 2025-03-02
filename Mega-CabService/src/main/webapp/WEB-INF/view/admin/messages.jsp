@@ -18,11 +18,11 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS for Black and Yellow Theme -->
+    
     <style>
         body {
-            background-color: #1a1a1a; /* Dark background */
-            color: #f1f1f1; /* Light text */
+            background-color: #1a1a1a;
+            color: #f1f1f1; 
         }
         .table-custom {
             background-color: #f1f1f1; 
@@ -30,8 +30,8 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
             overflow: hidden;
         }
         .table-custom thead {
-            background-color: #ffc107; /* Yellow header */
-            color: #000; /* Black text */
+            background-color: #ffc107;
+            color: #000; 
         }
         .table-custom th,
         .table-custom td {
@@ -42,7 +42,7 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
             transition: background-color 0.3s ease;
         }
         .table-custom tbody tr:hover {
-            background-color: #FFFFCC; /* Darker hover effect */
+            background-color: #FFFFCC; 
         }
         .badge-custom {
             font-size: 0.9rem;
@@ -50,25 +50,25 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
             border-radius: 20px;
         }
         .badge-custom.bg-warning {
-            background-color: #ffc107 !important; /* Yellow for PENDING */
+            background-color: #ffc107 !important; 
             color: #000;
         }
         .badge-custom.bg-success {
-            background-color: #28a745 !important; /* Green for RESOLVED */
+            background-color: #28a745 !important; 
             color: #fff;
         }
         .btn-custom {
-            background-color: #ffc107; /* Yellow button */
+            background-color: #ffc107; 
             color: #000;
             border: none;
             transition: background-color 0.3s ease;
         }
         .btn-custom:hover {
-            background-color: #e0a800; /* Darker yellow on hover */
+            background-color: #e0a800; 
         }
         .modal-custom {
-            background-color: #262626; /* Dark modal background */
-            color: #f1f1f1; /* Light text */
+            background-color: #262626; 
+            color: #f1f1f1; 
         }
         .modal-custom .modal-header {
             border-bottom: 1px solid #444;
@@ -77,8 +77,8 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
             border-top: 1px solid #444;
         }
         .form-control-custom {
-            background-color: #333; /* Dark input background */
-            color: #f1f1f1; /* Light text */
+            background-color: #333; 
+            color: #f1f1f1; 
             border: 1px solid #444;
         }
         .form-control-custom:focus {

@@ -7,7 +7,7 @@
     <title>View Bookings</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        /* Black & Yellow Modern Theme */
+       
         body {
             background: #000;
             font-family: 'Poppins', sans-serif;
@@ -96,7 +96,7 @@
             transform: scale(1.05);
         }
 
-        /* Responsive Table */
+        
         @media (max-width: 768px) {
             .table {
                 font-size: 14px;
@@ -127,7 +127,7 @@
                         <th>Luggage</th>
                         <th>Payment</th>
                         <th>Status</th>
-                        <th>Actions</th> <!-- Merged Edit & Delete into one column -->
+                        <th>Actions</th> 
                     </tr>
                 </thead>
                 <tbody>

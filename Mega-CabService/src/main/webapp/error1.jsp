@@ -24,7 +24,7 @@
             width: 100%;
         }
         h1 {
-            color: #d9534f; /* Bootstrap's danger color */
+            color: #d9534f; 
             margin-bottom: 20px;
         }
         p {
@@ -32,7 +32,7 @@
             font-size: 18px;
         }
         a {
-            color: #337ab7; /* Bootstrap's primary color */
+            color: #337ab7; 
             text-decoration: none;
         }
         a:hover {

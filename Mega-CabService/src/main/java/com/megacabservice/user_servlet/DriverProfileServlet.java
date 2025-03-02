@@ -13,13 +13,13 @@ import java.io.IOException;
 public class DriverProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        Driver driver = (Driver) session.getAttribute("driverobj"); // Use "driverobj"
+        Driver driver = (Driver) session.getAttribute("driverobj"); 
 
         if (driver == null) {
-            // If the driver is not logged in, redirect to the login page
+            
             resp.sendRedirect(req.getContextPath() + "/login.jsp");
         } else {
-            // Forward the request to the driverProfile.jsp file
+            
             req.getRequestDispatcher("/WEB-INF/view/driver/driverProfile.jsp").forward(req, resp);
         }
     }

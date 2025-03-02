@@ -18,19 +18,19 @@ public class MessageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         try {
-            // Fetch all messages from the database
+            
         	 ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
             List<Contact> messages = contactDAO.getAllMessages();
 
-            // Set the messages as a request attribute
+            
             request.setAttribute("messages", messages);
 
-            // Forward the request to the JSP page for rendering
+            
       
             request.getRequestDispatcher("/WEB-INF/view/admin/messages.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle errors (e.g., display an error page)
+            
             response.sendRedirect("error.jsp");
         }
     }

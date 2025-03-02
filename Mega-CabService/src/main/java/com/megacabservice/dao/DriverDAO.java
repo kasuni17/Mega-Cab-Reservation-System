@@ -9,7 +9,7 @@ public interface DriverDAO {
     List<Driver> getAllDrivers();
     boolean updateDriver(Driver driver);
     boolean deleteDriver(int driverId);
-    Driver getDriverById(int driverId); // Add this method
+    Driver getDriverById(int driverId); 
 
     
 

@@ -12,12 +12,9 @@ import java.util.List;
 public class BookingDAOImpl implements BookingDAO {
 	private Connection conn;
 
-	// No-argument constructor
 	public BookingDAOImpl() {
-		this.conn = DBConn.getConnection(); // Initialize the connection using DBConn
+		this.conn = DBConn.getConnection(); 
 	}
-
-	// Existing constructor (optional, if you still want to pass a connection)
 	public BookingDAOImpl(Connection conn) {
 		this.conn = conn;
 	}
@@ -51,11 +48,11 @@ public class BookingDAOImpl implements BookingDAO {
 			if (rows > 0) {
 				try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
 					if (generatedKeys.next()) {
-						return generatedKeys.getInt(1); // Return the generated booking ID
+						return generatedKeys.getInt(1); 
 					}
 				}
 			}
-			return -1; // Return -1 if no ID was generated
+			return -1; 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return -1;
@@ -117,16 +114,16 @@ public class BookingDAOImpl implements BookingDAO {
 			stmt.setString(9, booking.getStatus());
 			stmt.setInt(10, booking.getBooking_id());
 
-			// Debug: Print the SQL query and parameters
+			
 			System.out.println("Executing SQL: " + sql);
 			System.out.println("Parameters: " + booking.toString());
 
 			int rows = stmt.executeUpdate();
-			System.out.println("Rows updated: " + rows); // Debug: Print the number of rows updated
+			System.out.println("Rows updated: " + rows); 
 
 			return rows > 0;
 		} catch (SQLException e) {
-			e.printStackTrace(); // Print the stack trace for debugging
+			e.printStackTrace(); 
 			System.err.println("SQL State: " + e.getSQLState());
 			System.err.println("Error Code: " + e.getErrorCode());
 			System.err.println("Message: " + e.getMessage());
@@ -240,7 +237,7 @@ public class BookingDAOImpl implements BookingDAO {
 	         e.printStackTrace();
 	     }
 
-	     // Debug: Print the number of bookings fetched
+	     
 	     System.out.println("Number of bookings fetched: " + driverBookings.size());
 
 	     return driverBookings;

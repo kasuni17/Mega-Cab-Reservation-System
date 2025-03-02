@@ -10,7 +10,7 @@
 <title>Mega Cab Service - Register Page</title>
 <%@include file="All_Components/AllCSS.jsp"%>
 
-<style>/* General Styles */
+<style>
 body {
 	font-family: 'Arial', sans-serif;
 	background-image: url('images/background/register.png');
@@ -25,7 +25,7 @@ body {
 	align-items: center;
 }
 
-/* Container */
+
 .container {
 	max-width: 700px;
 	width: 100%;
@@ -41,7 +41,7 @@ body {
 	-webkit-backdrop-filter: blur(10px);
 }
 
-/* Heading */
+
 h1 {
 	font-size: 28px;
 	font-weight: 600;
@@ -51,7 +51,6 @@ h1 {
 	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Form Styles */
 form {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -90,12 +89,11 @@ input:focus, textarea:focus {
 	background: #fff;
 }
 
-/* Full-Width Items */
 textarea {
 	grid-column: span 2;
 }
 
-/* Button */
+
 button {
 	grid-column: span 2;
 	padding: 12px;
@@ -149,7 +147,7 @@ button:hover {
 	margin-top: 10px;
 }
 
-/* Responsive Design */
+
 @media ( max-width : 600px) {
 	form {
 		grid-template-columns: 1fr;
@@ -159,7 +157,7 @@ button:hover {
 	}
 }
 
-/* Animation */
+
 @
 keyframes fadeIn {from { opacity:0;
 	transform: translateY(30px);

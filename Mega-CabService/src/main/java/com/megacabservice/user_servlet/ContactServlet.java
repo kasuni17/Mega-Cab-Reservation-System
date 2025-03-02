@@ -24,7 +24,7 @@ public class ContactServlet extends HttpServlet {
         contact.setMessage(message);
         
         try {
-            ContactDAO contactDAO = new ContactDAO(DBConn.getConnection()); // Corrected line
+            ContactDAO contactDAO = new ContactDAO(DBConn.getConnection()); 
             boolean success = contactDAO.saveMessage(contact);
             if(success) {
                 response.sendRedirect("contactus.jsp?status=success");

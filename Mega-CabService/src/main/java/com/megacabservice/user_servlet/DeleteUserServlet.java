@@ -17,13 +17,13 @@ public class DeleteUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve the user ID from the request
+        
         int userId = Integer.parseInt(request.getParameter("id"));
         
-        // Delete the user from the database
+        
         userDAO.deleteUser(userId);
         
-        // Redirect to the viewUsers page
+        
         response.sendRedirect("viewUsers");
     }
 }

@@ -9,7 +9,6 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-/* General Reset */
 * {
 	margin: 0;
 	padding: 0;
@@ -18,21 +17,19 @@
 
 body {
 	font-family: 'Arial', sans-serif;
-	background-color: #1a1a1a; /* Dark background */
+	background-color: #1a1a1a;
 	color: #fff;
 }
 
-/* Navbar Styling */
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #000000; /* Black */
+	background-color: #000000;
 	padding: 10px 20px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Logo Styling */
 .logo img {
 	height: 50px;
 	transition: transform 0.3s ease;
@@ -42,7 +39,6 @@ body {
 	transform: scale(1.1);
 }
 
-/* Nav Links Styling */
 .nav-links {
 	list-style: none;
 	display: flex;
@@ -57,7 +53,7 @@ body {
 
 .nav-links a {
 	text-decoration: none;
-	color: #FFD700; /* Yellow */
+	color: #FFD700;
 	font-size: 18px;
 	padding: 10px 15px;
 	border-radius: 5px;
@@ -65,13 +61,12 @@ body {
 	position: relative;
 }
 
-/* Hover effect for nav links */
 .nav-links a::after {
 	content: '';
 	position: absolute;
 	width: 0;
 	height: 2px;
-	background: #FFD700; /* Yellow */
+	background: #FFD700;
 	bottom: 0;
 	left: 50%;
 	transition: all 0.3s ease;
@@ -83,16 +78,14 @@ body {
 }
 
 .nav-links a:hover {
-	color: #ffffff; /* White */
-	background-color: rgba(255, 215, 0, 0.1); /* Light yellow overlay */
+	color: #ffffff;
+	background-color: rgba(255, 215, 0, 0.1);
 }
 
-/* Home Button Styling */
 .home-button {
 	font-weight: bold;
 }
 
-/* Logout Button Styling */
 .logout {
 	display: flex;
 	align-items: center;
@@ -100,11 +93,11 @@ body {
 
 .logout-button {
 	text-decoration: none;
-	color: #000000; /* Black */
+	color: #000000;
 	font-size: 18px;
 	padding: 10px 20px;
-	border-radius: 30px; /* Rounded corners */
-	background-color: #FFD700; /* Yellow */
+	border-radius: 30px;
+	background-color: #FFD700;
 	transition: all 0.3s ease;
 	position: relative;
 	overflow: hidden;
@@ -112,11 +105,10 @@ body {
 	box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
 	display: flex;
 	align-items: center;
-	gap: 8px; /* Space between icon and text */
-	font-weight: bold; /* Bold text */
+	gap: 8px;
+	font-weight: bold;
 }
 
-/* Hover effect for logout button */
 .logout-button::before {
 	content: '';
 	position: absolute;
@@ -138,13 +130,12 @@ body {
 }
 
 .logout-button:hover {
-	background-color: #FFA500; /* Orange-yellow for hover */
-	border-color: #ffffff; /* White border */
+	background-color: #FFA500;
+	border-color: #ffffff;
 	box-shadow: 0 6px 12px rgba(255, 165, 0, 0.5);
 	transform: translateY(-2px);
 }
 
-/* Animation for Navbar */
 @
 keyframes slideIn {from { opacity:0;
 	transform: translateY(-50px);
@@ -173,14 +164,14 @@ to {
 			<li><a href="home.jsp" class="home-button">Home</a></li>
 		</ul>
 		<div class="logout">
-        <a href="login.jsp" class="logout-button" id="logoutButton"> <i class="fas fa-sign-out-alt"></i>
-					 Logout
-				</a>
-    </div>
+			<a href="login.jsp" class="logout-button" id="logoutButton"> <i
+				class="fas fa-sign-out-alt"></i> Logout
+			</a>
+		</div>
 	</nav>
 
-	<!-- JavaScript for Logout Confirmation -->
-	
+
+
 
 </body>
 </html>

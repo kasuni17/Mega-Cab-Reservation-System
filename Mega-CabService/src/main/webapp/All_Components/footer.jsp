@@ -136,7 +136,7 @@ footer {
 </style>
 </head>
 <body>
-	<!-- Footer -->
+	
 	<footer>
 		<div class="footer-container">
 			<!-- Logo Section -->

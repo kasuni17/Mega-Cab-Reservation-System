@@ -19,7 +19,7 @@ public class AddDriverServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 	        throws ServletException, IOException {
-	    // Forward to the add_driver.jsp form
+	    
 	    request.getRequestDispatcher("/WEB-INF/view/admin/add_driver.jsp").forward(request, response);
 	}
 
@@ -27,7 +27,7 @@ public class AddDriverServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	        throws ServletException, IOException {
 	    try {
-	        // Retrieve form data
+	       
 	        String name = request.getParameter("name");
 	        String email = request.getParameter("email");
 	        String password = request.getParameter("password");
@@ -35,7 +35,7 @@ public class AddDriverServlet extends HttpServlet {
 	        String phone = request.getParameter("phone");
 	        String address = request.getParameter("address");
 
-	        // Populate Driver object
+	        
 	        Driver driver = new Driver();
 	        driver.setName(name);
 	        driver.setEmail(email);
@@ -45,11 +45,11 @@ public class AddDriverServlet extends HttpServlet {
 	        driver.setAddress(address);
 	        driver.setStatus("active");
 
-	        // Insert driver into the database
+	       
 	        DriverDAO dao = new DriverDAOImpl(DBConn.getInstance().getConnection());
 	        boolean success = dao.addDriver(driver);
 
-	        // Set success or failure message
+	        
 	        HttpSession session = request.getSession();
 	        if (success) {
 	            session.setAttribute("succMsg", "Driver Added Successfully!");
@@ -57,14 +57,14 @@ public class AddDriverServlet extends HttpServlet {
 	            session.setAttribute("failedMsg", "Failed to Add Driver!");
 	        }
 
-	        // Forward to the view_drivers.jsp page
+	        
 	        request.getRequestDispatcher("/WEB-INF/view/admin/view_drivers.jsp").forward(request, response);
 
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        HttpSession session = request.getSession();
 	        session.setAttribute("failedMsg", "Server Error: " + e.getMessage());
-	        // Forward to the view_drivers.jsp page even in case of error
+	        
 	        request.getRequestDispatcher("/WEB-INF/view/admin/view_drivers.jsp").forward(request, response);
 	    }
 	}

@@ -19,14 +19,14 @@ public class ViewUsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Fetch users from the database
+        
         List<user> users = userDAO.getAllUsers();
 
-        // Debugging statements
+       
         System.out.println("Users fetched: " + users.size());
         users.forEach(System.out::println);
 
-        // Pass data to JSP
+        
         request.setAttribute("users", users);
         request.getRequestDispatcher("/WEB-INF/view/admin/viewUsers.jsp").forward(request, response);
     }

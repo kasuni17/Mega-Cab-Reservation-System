@@ -5,13 +5,13 @@
 <head>
     <title>Edit User</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #000000); /* Dark gradient background */
+            background: linear-gradient(135deg, #1a1a1a, #000000); 
             margin: 0;
             padding: 20px;
-            color: #fff; /* White text */
+            color: #fff; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,7 +20,7 @@
 
         h1 {
             text-align: center;
-            color: #FFD700; /* Gold/Yellow */
+            color: #FFD700; 
             font-size: 2.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -36,11 +36,11 @@
             }
         }
 
-        /* Form Container */
+       
         .form-container {
-            background: #2a2a2a; /* Dark card background */
+            background: #2a2a2a; 
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); /* Yellow shadow */
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); 
             padding: 30px;
             max-width: 500px;
             width: 100%;
@@ -58,7 +58,7 @@
             }
         }
 
-        /* Form Styles */
+        
         form {
             display: flex;
             flex-direction: column;
@@ -67,22 +67,22 @@
 
         label {
             font-weight: bold;
-            color: #FFD700; /* Gold/Yellow */
+            color: #FFD700; 
         }
 
         input[type="text"] {
             padding: 10px;
-            border: 1px solid #444; /* Darker border */
+            border: 1px solid #444; 
             border-radius: 5px;
-            background: #333; /* Dark input background */
-            color: #fff; /* White text */
+            background: #333; 
+            color: #fff; 
             font-size: 1em;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         input[type="text"]:focus {
-            border-color: #FFD700; /* Gold/Yellow */
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Yellow glow */
+            border-color: #FFD700; 
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); 
             outline: none;
         }
 
@@ -90,8 +90,8 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background: linear-gradient(135deg, #FFD700, #ffcc00); /* Yellow gradient */
-            color: #1a1a1a; /* Dark text */
+            background: linear-gradient(135deg, #FFD700, #ffcc00);
+            color: #1a1a1a; 
             font-size: 1em;
             font-weight: bold;
             cursor: pointer;
@@ -103,7 +103,7 @@
             box-shadow: 0 6px 10px rgba(255, 215, 0, 0.4);
         }
 
-        /* Responsive Design */
+        
         @media (max-width: 600px) {
             .form-container {
                 padding: 20px;

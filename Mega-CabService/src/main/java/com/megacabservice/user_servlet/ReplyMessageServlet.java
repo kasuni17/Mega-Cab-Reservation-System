@@ -23,7 +23,7 @@ public class ReplyMessageServlet extends HttpServlet {
 	        boolean updated = contactDAO.updateReply(messageId, reply);
 	        
 	        if (updated) {
-	            // Send email to user
+	            
 	            String subject = "Reply from Colombo Mega Cabs";
 	            String content = "Dear Customer,\n\n"
 	                    + "Thank you for contacting us. Here is our response:\n\n"
@@ -39,7 +39,7 @@ public class ReplyMessageServlet extends HttpServlet {
 	        request.setAttribute("status", "error");
 	    }
 
-	    // Forward the request to the JSP page
+	    
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/admin/messages.jsp");
 	    dispatcher.forward(request, response);
 	}

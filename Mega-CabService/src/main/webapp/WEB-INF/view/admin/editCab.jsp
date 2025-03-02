@@ -5,7 +5,7 @@
 <head>
     <title>Edit Cab</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000;
@@ -17,7 +17,7 @@
             overflow: hidden;
         }
 
-        /* Sidebar Styles */
+      
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -46,7 +46,7 @@
             background-color: #333;
         }
 
-        /* Main Content Styles */
+        
         .main-content {
             flex: 1;
             padding: 20px;
@@ -69,7 +69,7 @@
             color: #FFD700;
         }
 
-        /* Form Styles */
+      
         form {
             display: flex;
             flex-direction: column;
@@ -121,7 +121,7 @@
             background-color: #FFA500;
         }
 
-        /* Error Message */
+       
         .error-message {
             color: #FF0000;
             font-weight: bold;
