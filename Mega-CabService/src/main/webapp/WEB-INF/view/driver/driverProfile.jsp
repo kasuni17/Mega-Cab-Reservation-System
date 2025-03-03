@@ -137,7 +137,8 @@
                 </tr>
             </table>
         </form>
-        <a href="${pageContext.request.contextPath}/logout">Logout</a>
+        <a href="<%= request.getContextPath() %>/driver/home">Back to Dashboard</a>
+
     </div>
 </body>
 </html>

@@ -164,6 +164,7 @@ to {
 </style>
 </head>
 <body>
+<%@include file="Navbar.jsp"%>
 	<h1>User List</h1>
 	<div class="card">
 		<c:choose>

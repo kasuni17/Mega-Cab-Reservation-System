@@ -19,27 +19,7 @@ body {
 	padding: 0;
 }
 
-.navbar {
-	background-color: #1A1A2E; /* Dark blue navbar */
-	color: white;
-	padding: 15px 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
 
-.navbar a {
-	color: #E0E0E0;
-	text-decoration: none;
-	margin: 0 15px;
-	font-size: 16px;
-	transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-	color: #00BFFF; /* Bright blue hover effect */
-}
 
 .welcome-message {
 	text-align: center;
@@ -105,16 +85,6 @@ body {
 </head>
 <body>
 
-	<!-- Navbar -->
-	<div class="navbar">
-		<div>
-			<a href="driver/home.jsp">Home</a> <a href="dprofile.jsp">Profile</a>
-			<a href="driver/trips.jsp">Trips</a>
-		</div>
-		<div>
-			<a href="login.jsp">Logout</a>
-		</div>
-	</div>
 
 	<!-- Welcome Message -->
 	<div class="welcome-message">
@@ -134,6 +104,9 @@ body {
 				<i class="fas fa-road"></i>  View Trips
 			</a> 
 			
+			<a href="${pageContext.request.contextPath}/logout"> 
+    <i class="fas fa-sign-out-alt"></i> Logout
+</a>
 		</div>
 	</div>
 

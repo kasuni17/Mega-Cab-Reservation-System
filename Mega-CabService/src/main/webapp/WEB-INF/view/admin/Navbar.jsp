@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,7 +160,7 @@ to {
 		</div>
 		<!-- Home button in the middle -->
 		<ul class="nav-links">
-			<li><a href="home.jsp" class="home-button">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/home" class="home-button">Home</a></li>
 		</ul>
 		<div class="logout">
 			<a href="login.jsp" class="logout-button" id="logoutButton"> <i

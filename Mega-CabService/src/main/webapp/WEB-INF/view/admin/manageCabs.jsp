@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Manage Cabs</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -253,6 +254,7 @@
     </style>
 </head>
 <body>
+<%@include file="Navbar.jsp"%>
     <div class="container">
         <h2>Manage Cabs</h2>
 

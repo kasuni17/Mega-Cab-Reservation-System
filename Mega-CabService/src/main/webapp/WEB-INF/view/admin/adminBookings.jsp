@@ -69,7 +69,22 @@
             margin: 0;
         }
 
-       
+        .dashboard-btn {
+            background-color: #FFD700;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-btn:hover {
+            background-color: #FFA500;
+        }
         @media (max-width: 768px) {
             table {
                 display: block;
@@ -79,6 +94,7 @@
     </style>
 </head>
 <body>
+<a href="<%= request.getContextPath() %>/home" class="dashboard-btn">Go to Admin Dashboard</a>
     <h1>Admin Bookings</h1>
     <table>
         <tr>

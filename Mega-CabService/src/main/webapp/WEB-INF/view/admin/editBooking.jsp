@@ -64,6 +64,7 @@
     </style>
 </head>
 <body>
+<%@include file="Navbar.jsp"%>
     <div class="container">
         <h2>Edit Booking</h2>
         <form action="${pageContext.request.contextPath}/admin/editBooking" method="POST">

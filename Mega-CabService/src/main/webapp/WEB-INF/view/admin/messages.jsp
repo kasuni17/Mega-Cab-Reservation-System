@@ -89,6 +89,7 @@ ContactDAO contactDAO = new ContactDAO(DBConn.getConnection());
     </style>
 </head>
 <body>
+
     <div class="container mt-5">
         <h2 class="text-center mb-4 text-warning">Customer Messages</h2>
         

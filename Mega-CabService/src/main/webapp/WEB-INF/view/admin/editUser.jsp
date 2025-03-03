@@ -114,8 +114,10 @@
             }
         }
     </style>
+    
 </head>
 <body>
+
     <div class="form-container">
         <h1>Edit User</h1>
         <form action="EditUserServlet" method="post">

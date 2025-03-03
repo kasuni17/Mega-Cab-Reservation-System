@@ -183,8 +183,10 @@
     </style>
 </head>
 <body>
+<%@include file="Navbar.jsp"%>
     <!-- Sidebar -->
     <div class="sidebar">
+     <a href="${pageContext.request.contextPath}/home">Back to Dashboard</a>
         <a href="view_drivers" class="<%= request.getRequestURI().endsWith("view_drivers.jsp") ? "active" : "" %>">View Drivers</a>
         <a href="addDriver" class="<%= request.getRequestURI().endsWith("add_driver.jsp") ? "active" : "" %>">Add Driver</a>
     </div>

@@ -162,13 +162,14 @@
     </style>
 </head>
 <body>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <ul>
-            <li> <a href="viewCabs">View Cabs</a></li>
-            <li><a href="${pageContext.request.contextPath}/AddCabServlet">Add New Cab</a></li>
+           <li><a href="viewCabs">View Cabs</a> </li>
            
+           <li> <a href="home">Back to Dashboard</a></li>
         </ul>
     </div>
 

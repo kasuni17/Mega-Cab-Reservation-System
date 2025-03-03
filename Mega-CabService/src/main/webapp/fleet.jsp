@@ -1,13 +1,13 @@
 <%@ page import="com.megacabservice.dao.CabDAOImpl, com.megacabservice.entity.Cab, com.megacabservice.db.DBConn" %>
 <%@ page import="java.util.List" %>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Our Fleet</title>
     <style>
-     body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #121212;
             margin: 0;
@@ -19,7 +19,7 @@
             position: relative;
             width: 100%;
             height: 570px;
-             background: url('images/background/about.png') no-repeat center center/cover;
+            background: url('images/background/about.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -32,13 +32,10 @@
             padding: 100px 600px;
             border-radius: 10px;
         }
-
-
-    .filter-buttons {
-        margin: 30px 0;
-    }
-
-    .filter-buttons button {
+        .filter-buttons {
+            margin: 30px 0;
+        }
+        .filter-buttons button {
             padding: 10px 20px;
             margin: 5px;
             border: none;
@@ -52,9 +49,7 @@
             background-color: yellow;
             color: black;
         }
-
-
-      .fleet-container {
+        .fleet-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -80,19 +75,16 @@
             border-radius: 10px;
             object-fit: cover;
         }
-
-    .vehicle-card h3 {
-        margin: 15px 0 10px 0;
-        color: #00c6ff;
-        font-size: 1.5em;
-    }
-
-    .vehicle-card p {
-        margin: 5px 0;
-        text-align: left;
-    }
-
-    .book-now {
+        .vehicle-card h3 {
+            margin: 15px 0 10px 0;
+            color: #00c6ff;
+            font-size: 1.5em;
+        }
+        .vehicle-card p {
+            margin: 5px 0;
+            text-align: left;
+        }
+        .book-now {
             margin-top: 10px;
             padding: 10px 15px;
             background-color: yellow;
@@ -108,38 +100,30 @@
             background-color: darkblue;
             color: white;
         }
-
-    #category-heading {
-        font-size: 2.2em;
-        margin: 20px 0;
-        color: #00c6ff;
-    }
-
-    @media (max-width: 768px) {
-        .fleet-container {
-            flex-direction: column;
-            align-items: center;
+        #category-heading {
+            font-size: 2.2em;
+            margin: 20px 0;
+            color: #00c6ff;
         }
-
-        .banner h1 {
-            padding: 60px 100px;
-            font-size: 40px;
+        @media (max-width: 768px) {
+            .fleet-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .banner h1 {
+                padding: 60px 100px;
+                font-size: 40px;
+            }
         }
-    }
     </style>
 </head>
 <body>
-  <%@include file="All_Components/Navbar.jsp" %>
+    <%@include file="All_Components/Navbar.jsp" %>
     <div class="banner">
         <h1>Our Fleet</h1>
     </div>
 
-    <div class="filter-buttons">
-        <button onclick="filterFleet('all')">All</button>
-        <button onclick="filterFleet('Luxury')">Luxury</button>
-        <button onclick="filterFleet('Economy')">Economy</button>
-        <button onclick="filterFleet('Family')">Family</button>
-    </div>
+    
 
     <div class="fleet-container" id="fleetContainer">
         <%
@@ -150,11 +134,23 @@
             <div class="vehicle-card" data-category="<%= cab.getUseCase() %>">
                 <img src="<%= request.getContextPath() + "/" + cab.getImage() %>" alt="<%= cab.getName() %>">
                 <h3><%= cab.getName() %></h3>
-                <p><strong>Description:</strong> <%= cab.getDescription() %></p>
+                <p><strong>Description:</strong></p>
+                <ul style="text-align: left; padding-left: 20px; margin: 5px 0;">
+                    <% 
+                        String[] descriptionPoints = cab.getDescription().split("\\.");
+                        for (String point : descriptionPoints) {
+                            if (!point.trim().isEmpty()) {
+                    %>
+                        <li><%= point.trim() %></li>
+                    <%
+                            }
+                        }
+                    %>
+                </ul>
                 <p><strong>Capacity:</strong> <%= cab.getCapacity() %></p>
                 <p><strong>Use Case:</strong> <%= cab.getUseCase() %></p>
                 <p><strong>Fare Range:</strong> <%= cab.getFareRange() %></p>
-                <a href="bookig.jsp" class="book-now">Book Now</a>
+                
             </div>
         <%
             }

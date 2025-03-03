@@ -109,6 +109,7 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <h2>All Bookings</h2>
         <div class="table-responsive">
@@ -158,7 +159,7 @@
                 </tbody>
             </table>
         </div>
-        
+        <a href="<%= request.getContextPath() %>/home" class="btn btn-back">Admin Dashboard</a>
     </div>
 </body>
 </html>

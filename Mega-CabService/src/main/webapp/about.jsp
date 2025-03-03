@@ -104,8 +104,8 @@
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
     .team-member img {
-        width: 150px;
-        border-radius: 50%;
+        width: 200px;
+        border-radius: 1%;
         transition: transform 0.3s ease-in-out;
     }
     .team-member img:hover {
@@ -153,18 +153,18 @@
         <h2>Meet Our Team</h2>
         <div class="team-container">
             <div class="team-member">
-                <img src="team1.jpg" alt="Team Member">
-                <h3>John Doe</h3>
+                <img src="images/About/ceo.jpg" alt="Team Member">
+                <h3>Sarath Kumara</h3>
                 <p>Founder & CEO</p>
             </div>
             <div class="team-member">
-                <img src="team2.jpg" alt="Team Member">
-                <h3>Jane Smith</h3>
+                <img src="images/About/manager.jpg" alt="Team Member">
+                <h3>Nimali Perera</h3>
                 <p>Operations Manager</p>
             </div>
             <div class="team-member">
-                <img src="team3.jpg" alt="Team Member">
-                <h3>Mike Johnson</h3>
+                <img src="images/About/driver.jpg" alt="Team Member">
+                <h3>Dilantha Wijesinghe</h3>
                 <p>Lead Driver</p>
             </div>
         </div>

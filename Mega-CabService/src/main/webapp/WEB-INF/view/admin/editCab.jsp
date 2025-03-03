@@ -129,9 +129,11 @@
     </style>
 </head>
 <body>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>Admin Panel</h2>
+        <a href="${pageContext.request.contextPath}/home">Back to Dashboard</a>
         <a href="viewCabs">View Cabs</a>
         <a href="${pageContext.request.contextPath}/AddCabServlet">Add New Cab</a>
     </div>
