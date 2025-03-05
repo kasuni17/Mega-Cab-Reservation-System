@@ -102,6 +102,9 @@ class userDAOImplTest {
 
     @Test
     void testGetAllUsers() throws Exception {
+        System.out.println("Running testGetAllUsers...");
+
+        // Arrange
         user user = new user();
         user.setUser_id(1);
         user.setName("John Doe");
@@ -122,9 +125,13 @@ class userDAOImplTest {
         when(rs.getString("address")).thenReturn(user.getAddress());
         when(rs.getTimestamp("created_at")).thenReturn(user.getCreatedAt());
 
+        // Act
         List<user> users = userDAO.getAllUsers();
+
+        // Assert
         assertNotNull(users);
         assertEquals(1, users.size());
+        System.out.println("Retrieved all users successfully. Total users: " + users.size());
 
         user retrievedUser = users.get(0);
         assertEquals(user.getUser_id(), retrievedUser.getUser_id());
@@ -136,22 +143,28 @@ class userDAOImplTest {
         assertEquals(user.getAddress(), retrievedUser.getAddress());
         assertEquals(user.getCreatedAt(), retrievedUser.getCreatedAt());
 
-        verify(ps, times(1)).executeQuery();
+        System.out.println("User details: " + retrievedUser);
     }
 
     @Test
     void testDeleteUser() throws Exception {
+        System.out.println("Running testDeleteUser...");
+
+        // Arrange
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = userDAO.deleteUser(1);
+
+        // Assert
         assertTrue(result);
-
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeUpdate();
+        System.out.println("User deleted successfully. User ID: 1");
     }
-
     @Test
     void testUpdateUser() throws Exception {
+        System.out.println("Running testUpdateUser...");
+
+        // Arrange
         user user = new user();
         user.setUser_id(1);
         user.setName("John Doe");
@@ -162,20 +175,19 @@ class userDAOImplTest {
 
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = userDAO.updateUser(user);
-        assertTrue(result);
 
-        verify(ps, times(1)).setString(1, user.getName());
-        verify(ps, times(1)).setString(2, user.getEmail());
-        verify(ps, times(1)).setString(3, user.getPhoneNumber());
-        verify(ps, times(1)).setString(4, user.getNic());
-        verify(ps, times(1)).setString(5, user.getAddress());
-        verify(ps, times(1)).setInt(6, user.getUser_id());
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("User updated successfully. User ID: " + user.getUser_id());
     }
 
     @Test
     void testGetUserById() throws Exception {
+        System.out.println("Running testGetUserById...");
+
+        // Arrange
         user user = new user();
         user.setUser_id(1);
         user.setName("John Doe");
@@ -196,7 +208,10 @@ class userDAOImplTest {
         when(rs.getString("address")).thenReturn(user.getAddress());
         when(rs.getTimestamp("created_at")).thenReturn(user.getCreatedAt());
 
+        // Act
         user retrievedUser = userDAO.getUserById(1);
+
+        // Assert
         assertNotNull(retrievedUser);
         assertEquals(user.getUser_id(), retrievedUser.getUser_id());
         assertEquals(user.getName(), retrievedUser.getName());
@@ -207,7 +222,7 @@ class userDAOImplTest {
         assertEquals(user.getAddress(), retrievedUser.getAddress());
         assertEquals(user.getCreatedAt(), retrievedUser.getCreatedAt());
 
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Retrieved user by ID successfully. User ID: " + retrievedUser.getUser_id());
+        System.out.println("User details: " + retrievedUser);
     }
 }

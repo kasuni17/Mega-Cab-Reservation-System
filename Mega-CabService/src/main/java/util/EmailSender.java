@@ -7,8 +7,8 @@ import javax.mail.internet.*;
 public class EmailSender {
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
-    private static final String EMAIL_USERNAME = "hashvish914@gmail.com";
-    private static final String EMAIL_PASSWORD = "czzf dzto pkri jqtx"
+    private static final String EMAIL_USERNAME = "megacitycabcolombo@gmail.com";
+    private static final String EMAIL_PASSWORD = "kikt xand iaxk dgsv"
     		+ "";
 
     public static void sendEmail(String toEmail, String subject, String content) {

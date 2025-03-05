@@ -34,6 +34,7 @@ public class BookingDAOImplTest {
         MockitoAnnotations.openMocks(this);
         bookingDAO = new BookingDAOImpl(conn);
 
+        // Mock the database connection and prepared statement
         when(conn.prepareStatement(anyString(), eq(PreparedStatement.RETURN_GENERATED_KEYS))).thenReturn(stmt);
         when(conn.prepareStatement(anyString())).thenReturn(stmt);
         when(stmt.executeUpdate()).thenReturn(1);
@@ -44,6 +45,9 @@ public class BookingDAOImplTest {
 
     @Test
     public void testAddBooking() throws SQLException {
+        System.out.println("Running testAddBooking...");
+
+        // Arrange
         Booking booking = new Booking();
         booking.setUser_name("John Doe");
         booking.setUser_email("john.doe@example.com");
@@ -51,7 +55,7 @@ public class BookingDAOImplTest {
         booking.setUser_address("123 Main St");
         booking.setPickup_location("Airport");
         booking.setDrop_location("Hotel");
-        booking.setRide_date(new java.sql.Date(System.currentTimeMillis())); // Fix: Use java.sql.Date
+        booking.setRide_date(new java.sql.Date(System.currentTimeMillis()));
         booking.setRide_time(new java.sql.Time(System.currentTimeMillis()));
         booking.setPassenger_count(2);
         booking.setLuggage_count(1);
@@ -65,12 +69,19 @@ public class BookingDAOImplTest {
         booking.setStatus("Pending");
         booking.setUser_id(1);
 
+        // Act
         int bookingId = bookingDAO.addBooking(booking);
+
+        // Assert
         assertEquals(1, bookingId);
+        System.out.println("Booking added successfully. Booking ID: " + bookingId);
     }
 
     @Test
     public void testGetAllBookings() throws SQLException {
+        System.out.println("Running testGetAllBookings...");
+
+        // Arrange
         when(stmt.executeQuery()).thenReturn(rs);
         when(rs.next()).thenReturn(true, false);
         when(rs.getInt("booking_id")).thenReturn(1);
@@ -94,13 +105,20 @@ public class BookingDAOImplTest {
         when(rs.getString("status")).thenReturn("Pending");
         when(rs.getInt("user_id")).thenReturn(1);
 
+        // Act
         List<Booking> bookings = bookingDAO.getAllBookings();
+
+        // Assert
         assertNotNull(bookings);
         assertEquals(1, bookings.size());
+        System.out.println("Retrieved all bookings successfully. Total bookings: " + bookings.size());
     }
 
     @Test
     public void testUpdateBooking() throws SQLException {
+        System.out.println("Running testUpdateBooking...");
+
+        // Arrange
         Booking booking = new Booking();
         booking.setBooking_id(1);
         booking.setUser_name("John Doe");
@@ -109,22 +127,35 @@ public class BookingDAOImplTest {
         booking.setUser_address("123 Main St");
         booking.setPickup_location("Airport");
         booking.setDrop_location("Hotel");
-        booking.setRide_date(new java.sql.Date(System.currentTimeMillis())); // Fix: Use java.sql.Date
+        booking.setRide_date(new java.sql.Date(System.currentTimeMillis()));
         booking.setRide_time(new java.sql.Time(System.currentTimeMillis()));
         booking.setStatus("Confirmed");
 
+        // Act
         boolean result = bookingDAO.updateBooking(booking);
+
+        // Assert
         assertTrue(result);
+        System.out.println("Booking updated successfully.");
     }
 
     @Test
     public void testDeleteBooking() throws SQLException {
+        System.out.println("Running testDeleteBooking...");
+
+        // Act
         boolean result = bookingDAO.deleteBooking(1);
+
+        // Assert
         assertTrue(result);
+        System.out.println("Booking deleted successfully.");
     }
 
     @Test
     public void testGetBookingById() throws SQLException {
+        System.out.println("Running testGetBookingById...");
+
+        // Arrange
         when(stmt.executeQuery()).thenReturn(rs);
         when(rs.next()).thenReturn(true);
         when(rs.getInt("booking_id")).thenReturn(1);
@@ -148,13 +179,20 @@ public class BookingDAOImplTest {
         when(rs.getString("status")).thenReturn("Pending");
         when(rs.getInt("user_id")).thenReturn(1);
 
+        // Act
         Booking booking = bookingDAO.getBookingById(1);
+
+        // Assert
         assertNotNull(booking);
         assertEquals(1, booking.getBooking_id());
+        System.out.println("Retrieved booking by ID successfully. Booking ID: " + booking.getBooking_id());
     }
 
     @Test
     public void testGetBookingsByUserId() throws SQLException {
+        System.out.println("Running testGetBookingsByUserId...");
+
+        // Arrange
         when(stmt.executeQuery()).thenReturn(rs);
         when(rs.next()).thenReturn(true, false);
         when(rs.getInt("booking_id")).thenReturn(1);
@@ -165,13 +203,20 @@ public class BookingDAOImplTest {
         when(rs.getTime("ride_time")).thenReturn(new java.sql.Time(System.currentTimeMillis()));
         when(rs.getString("status")).thenReturn("Pending");
 
+        // Act
         List<Booking> bookings = bookingDAO.getBookingsByUserId(1);
+
+        // Assert
         assertNotNull(bookings);
         assertEquals(1, bookings.size());
+        System.out.println("Retrieved bookings by user ID successfully. Total bookings: " + bookings.size());
     }
 
     @Test
     public void testGetBookingsByDriverId() throws SQLException {
+        System.out.println("Running testGetBookingsByDriverId...");
+
+        // Arrange
         when(stmt.executeQuery()).thenReturn(rs);
         when(rs.next()).thenReturn(true, false);
         when(rs.getInt("booking_id")).thenReturn(1);
@@ -182,8 +227,12 @@ public class BookingDAOImplTest {
         when(rs.getTime("ride_time")).thenReturn(new java.sql.Time(System.currentTimeMillis()));
         when(rs.getString("status")).thenReturn("Pending");
 
+        // Act
         List<Booking> bookings = bookingDAO.getBookingsByDriverId(1);
+
+        // Assert
         assertNotNull(bookings);
         assertEquals(1, bookings.size());
+        System.out.println("Retrieved bookings by driver ID successfully. Total bookings: " + bookings.size());
     }
 }

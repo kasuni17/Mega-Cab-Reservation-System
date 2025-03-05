@@ -123,8 +123,6 @@
         <h1>Our Fleet</h1>
     </div>
 
-    
-
     <div class="fleet-container" id="fleetContainer">
         <%
             CabDAOImpl cabDAO = new CabDAOImpl(DBConn.getConnection());

@@ -228,11 +228,7 @@ footer p {
 			</div>
 
 
-			<div class="card">
-				<a href="Reports.jsp"> <i class="fas fa-file-alt"></i>
-					<h3>Reports</h3>
-				</a>
-			</div>
+			
 		</div>
 	</main>
 

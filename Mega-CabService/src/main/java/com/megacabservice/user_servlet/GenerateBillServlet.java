@@ -43,7 +43,7 @@ public class GenerateBillServlet extends HttpServlet {
                     + "Ride Time: " + booking.getRide_time() + "\n"
                     + "Passenger Count: " + booking.getPassenger_count() + "\n"
                     + "Luggage Count: " + booking.getLuggage_count() + "\n"
-                    + "Total Bill: $" + totalBill + "\n\n"
+                    + "Total Bill: Rs:" + totalBill + "\n\n"
                     + "Thank you for choosing our service!\n";
 
            

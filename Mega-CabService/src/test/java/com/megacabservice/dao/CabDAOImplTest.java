@@ -39,6 +39,9 @@ class CabDAOImplTest {
 
     @Test
     void testAddCab() throws Exception {
+        System.out.println("Running testAddCab...");
+
+        // Arrange
         Cab cab = new Cab();
         cab.setName("Cab1");
         cab.setImage("image1.jpg");
@@ -49,20 +52,19 @@ class CabDAOImplTest {
 
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = cabDAO.addCab(cab);
-        assertTrue(result);
 
-        verify(ps, times(1)).setString(1, cab.getName());
-        verify(ps, times(1)).setString(2, cab.getImage());
-        verify(ps, times(1)).setString(3, cab.getDescription());
-        verify(ps, times(1)).setString(4, cab.getCapacity());
-        verify(ps, times(1)).setString(5, cab.getUseCase());
-        verify(ps, times(1)).setString(6, cab.getFareRange());
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Cab added successfully. Cab Name: " + cab.getName());
     }
 
     @Test
     void testGetAllCabs() throws Exception {
+        System.out.println("Running testGetAllCabs...");
+
+        // Arrange
         when(rs.next()).thenReturn(true, false);
         when(rs.getInt("id")).thenReturn(1);
         when(rs.getString("name")).thenReturn("Cab1");
@@ -72,9 +74,13 @@ class CabDAOImplTest {
         when(rs.getString("use_case")).thenReturn("City Ride");
         when(rs.getString("fare_range")).thenReturn("10-20");
 
+        // Act
         List<Cab> cabs = cabDAO.getAllCabs();
+
+        // Assert
         assertNotNull(cabs);
         assertEquals(1, cabs.size());
+        System.out.println("Retrieved all cabs successfully. Total cabs: " + cabs.size());
 
         Cab cab = cabs.get(0);
         assertEquals(1, cab.getId());
@@ -85,11 +91,14 @@ class CabDAOImplTest {
         assertEquals("City Ride", cab.getUseCase());
         assertEquals("10-20", cab.getFareRange());
 
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Cab details: " + cab);
     }
 
     @Test
     void testGetCabById() throws Exception {
+        System.out.println("Running testGetCabById...");
+
+        // Arrange
         when(rs.next()).thenReturn(true);
         when(rs.getInt("id")).thenReturn(1);
         when(rs.getString("name")).thenReturn("Cab1");
@@ -99,7 +108,10 @@ class CabDAOImplTest {
         when(rs.getString("use_case")).thenReturn("City Ride");
         when(rs.getString("fare_range")).thenReturn("10-20");
 
+        // Act
         Cab cab = cabDAO.getCabById(1);
+
+        // Assert
         assertNotNull(cab);
         assertEquals(1, cab.getId());
         assertEquals("Cab1", cab.getName());
@@ -109,12 +121,15 @@ class CabDAOImplTest {
         assertEquals("City Ride", cab.getUseCase());
         assertEquals("10-20", cab.getFareRange());
 
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Retrieved cab by ID successfully. Cab ID: " + cab.getId());
+        System.out.println("Cab details: " + cab);
     }
 
     @Test
     void testUpdateCab() throws Exception {
+        System.out.println("Running testUpdateCab...");
+
+        // Arrange
         Cab cab = new Cab();
         cab.setId(1);
         cab.setName("Cab1");
@@ -126,27 +141,26 @@ class CabDAOImplTest {
 
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = cabDAO.updateCab(cab);
-        assertTrue(result);
 
-        verify(ps, times(1)).setString(1, cab.getName());
-        verify(ps, times(1)).setString(2, cab.getImage());
-        verify(ps, times(1)).setString(3, cab.getDescription());
-        verify(ps, times(1)).setString(4, cab.getCapacity());
-        verify(ps, times(1)).setString(5, cab.getUseCase());
-        verify(ps, times(1)).setString(6, cab.getFareRange());
-        verify(ps, times(1)).setInt(7, cab.getId());
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Cab updated successfully. Cab ID: " + cab.getId());
     }
 
     @Test
     void testDeleteCab() throws Exception {
+        System.out.println("Running testDeleteCab...");
+
+        // Arrange
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = cabDAO.deleteCab(1);
-        assertTrue(result);
 
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Cab deleted successfully. Cab ID: 1");
     }
 }

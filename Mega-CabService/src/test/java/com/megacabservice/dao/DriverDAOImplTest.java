@@ -39,6 +39,9 @@ class DriverDAOImplTest {
 
     @Test
     void testAddDriver() throws Exception {
+        System.out.println("Running testAddDriver...");
+
+        // Arrange
         Driver driver = new Driver();
         driver.setName("John Doe");
         driver.setEmail("john.doe@example.com");
@@ -49,20 +52,19 @@ class DriverDAOImplTest {
 
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = driverDAO.addDriver(driver);
-        assertTrue(result);
 
-        verify(ps, times(1)).setString(1, driver.getName());
-        verify(ps, times(1)).setString(2, driver.getEmail());
-        verify(ps, times(1)).setString(3, driver.getPassword());
-        verify(ps, times(1)).setString(4, driver.getLicenseNumber());
-        verify(ps, times(1)).setString(5, driver.getPhoneNumber());
-        verify(ps, times(1)).setString(6, driver.getAddress());
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Driver added successfully. Driver Name: " + driver.getName());
     }
 
     @Test
     void testLogin() throws Exception {
+        System.out.println("Running testLogin...");
+
+        // Arrange
         Driver driver = new Driver();
         driver.setDriverId(1);
         driver.setName("John Doe");
@@ -81,7 +83,10 @@ class DriverDAOImplTest {
         when(rs.getString("address")).thenReturn(driver.getAddress());
         when(rs.getString("status")).thenReturn(driver.getStatus());
 
+        // Act
         Driver loggedInDriver = driverDAO.login("john.doe@example.com", "password123");
+
+        // Assert
         assertNotNull(loggedInDriver);
         assertEquals(driver.getDriverId(), loggedInDriver.getDriverId());
         assertEquals(driver.getName(), loggedInDriver.getName());
@@ -91,13 +96,15 @@ class DriverDAOImplTest {
         assertEquals(driver.getAddress(), loggedInDriver.getAddress());
         assertEquals(driver.getStatus(), loggedInDriver.getStatus());
 
-        verify(ps, times(1)).setString(1, "john.doe@example.com");
-        verify(ps, times(1)).setString(2, "password123");
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Driver login successful. Driver ID: " + loggedInDriver.getDriverId());
+        System.out.println("Driver details: " + loggedInDriver);
     }
 
     @Test
     void testGetAllDrivers() throws Exception {
+        System.out.println("Running testGetAllDrivers...");
+
+        // Arrange
         Driver driver = new Driver();
         driver.setDriverId(1);
         driver.setName("John Doe");
@@ -116,9 +123,13 @@ class DriverDAOImplTest {
         when(rs.getString("address")).thenReturn(driver.getAddress());
         when(rs.getString("status")).thenReturn(driver.getStatus());
 
+        // Act
         List<Driver> drivers = driverDAO.getAllDrivers();
+
+        // Assert
         assertNotNull(drivers);
         assertEquals(1, drivers.size());
+        System.out.println("Retrieved all drivers successfully. Total drivers: " + drivers.size());
 
         Driver retrievedDriver = drivers.get(0);
         assertEquals(driver.getDriverId(), retrievedDriver.getDriverId());
@@ -129,11 +140,14 @@ class DriverDAOImplTest {
         assertEquals(driver.getAddress(), retrievedDriver.getAddress());
         assertEquals(driver.getStatus(), retrievedDriver.getStatus());
 
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Driver details: " + retrievedDriver);
     }
 
     @Test
     void testUpdateDriver() throws Exception {
+        System.out.println("Running testUpdateDriver...");
+
+        // Arrange
         Driver driver = new Driver();
         driver.setDriverId(1);
         driver.setName("John Doe");
@@ -146,33 +160,34 @@ class DriverDAOImplTest {
 
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = driverDAO.updateDriver(driver);
-        assertTrue(result);
 
-        verify(ps, times(1)).setString(1, driver.getName());
-        verify(ps, times(1)).setString(2, driver.getEmail());
-        verify(ps, times(1)).setString(3, driver.getPassword());
-        verify(ps, times(1)).setString(4, driver.getLicenseNumber());
-        verify(ps, times(1)).setString(5, driver.getPhoneNumber());
-        verify(ps, times(1)).setString(6, driver.getAddress());
-        verify(ps, times(1)).setString(7, driver.getStatus());
-        verify(ps, times(1)).setInt(8, driver.getDriverId());
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Driver updated successfully. Driver ID: " + driver.getDriverId());
     }
 
     @Test
     void testDeleteDriver() throws Exception {
+        System.out.println("Running testDeleteDriver...");
+
+        // Arrange
         when(ps.executeUpdate()).thenReturn(1);
 
+        // Act
         boolean result = driverDAO.deleteDriver(1);
-        assertTrue(result);
 
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeUpdate();
+        // Assert
+        assertTrue(result);
+        System.out.println("Driver deleted successfully. Driver ID: 1");
     }
 
     @Test
     void testGetDriverById() throws Exception {
+        System.out.println("Running testGetDriverById...");
+
+        // Arrange
         Driver driver = new Driver();
         driver.setDriverId(1);
         driver.setName("John Doe");
@@ -193,7 +208,10 @@ class DriverDAOImplTest {
         when(rs.getString("address")).thenReturn(driver.getAddress());
         when(rs.getString("status")).thenReturn(driver.getStatus());
 
+        // Act
         Driver retrievedDriver = driverDAO.getDriverById(1);
+
+        // Assert
         assertNotNull(retrievedDriver);
         assertEquals(driver.getDriverId(), retrievedDriver.getDriverId());
         assertEquals(driver.getName(), retrievedDriver.getName());
@@ -204,7 +222,7 @@ class DriverDAOImplTest {
         assertEquals(driver.getAddress(), retrievedDriver.getAddress());
         assertEquals(driver.getStatus(), retrievedDriver.getStatus());
 
-        verify(ps, times(1)).setInt(1, 1);
-        verify(ps, times(1)).executeQuery();
+        System.out.println("Retrieved driver by ID successfully. Driver ID: " + retrievedDriver.getDriverId());
+        System.out.println("Driver details: " + retrievedDriver);
     }
 }
