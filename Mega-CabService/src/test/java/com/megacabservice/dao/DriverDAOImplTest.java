@@ -178,7 +178,7 @@ class DriverDAOImplTest {
         // Act
         boolean result = driverDAO.deleteDriver(1);
 
-        // Assert
+        
         assertTrue(result);
         System.out.println("Driver deleted successfully. Driver ID: 1");
     }
@@ -187,7 +187,6 @@ class DriverDAOImplTest {
     void testGetDriverById() throws Exception {
         System.out.println("Running testGetDriverById...");
 
-        // Arrange
         Driver driver = new Driver();
         driver.setDriverId(1);
         driver.setName("John Doe");
