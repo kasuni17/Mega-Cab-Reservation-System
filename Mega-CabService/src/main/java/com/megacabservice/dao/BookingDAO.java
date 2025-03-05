@@ -11,4 +11,5 @@ public interface BookingDAO {
     Booking getBookingById(int bookingId);
     List<Booking> getBookingsByUserId(int userId);
     List<Booking> getBookingsByDriverId(int driverId);
+    
 }
