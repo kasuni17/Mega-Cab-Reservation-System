@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
 footer {
 	background: #000;
 	color: #fff;
@@ -132,11 +131,10 @@ footer {
 		margin: 100px 0;
 	}
 }
-
 </style>
 </head>
 <body>
-	
+
 	<footer>
 		<div class="footer-container">
 			<!-- Logo Section -->
@@ -162,12 +160,21 @@ footer {
 			<div class="footer-nav">
 				<h3>Quick Links</h3>
 				<ul>
-					<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-					<li><a href="about.html"><i class="fa fa-user"></i> About
+					<li><a href="index.jsp"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="about.jsp"><i class="fa fa-user"></i> About
 							Us</a></li>
-					<li><a href="services.html"><i class="fa fa-cogs"></i>Services</a></li>
-					<li><a href="contact.html"><i class="fa fa-envelope"></i>Contact
-							Us</a></li>
+					<li><a href="fleet.jsp"><i class="fa fa-cogs"></i> Fleet</a></li>
+					<li><a href="contactus.jsp"><i class="fa fa-envelope"></i>
+							Contact Us</a></li>
+					<li><a href="booking.jsp"><i class="fa fa-ticket"></i>
+							Booking</a></li>
+					<!-- Booking Page Link -->
+					<li><a href="login.jsp"><i class="fa fa-sign-in"></i>
+							Login</a></li>
+					<!-- Login Page Link -->
+					<li><a href="register.jsp"><i class="fa fa-user-plus"></i>
+							Register</a></li>
+					<!-- Register Page Link -->
 				</ul>
 			</div>
 			<!-- Social Media Section -->
