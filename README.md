@@ -88,7 +88,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ---
 
 ## 🙏 Acknowledgments
-- Thanks to **Bootstrap** and **Font Awesome** for the UI components.
+- Thanks to **Font Awesome** for the UI components.
 - Special thanks to the open-source community for their contributions.
 
 ---
